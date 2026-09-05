@@ -1,0 +1,8 @@
+[
+ {"name":"Qumran","lat":31.7414,"lon":35.4592,"type":"settlement","note":"Not named in the Bible; site of the Dead Sea Scrolls."},
+ {"name":"Masada","lat":31.3156,"lon":35.3536,"type":"fortification","note":"Not named in the Bible; last holdout of the First Jewish-Roman War."},
+ {"name":"Modein","lat":31.9319,"lon":35.0083,"type":"settlement","note":"Home of the Maccabees; named in 1 Maccabees, outside the Protestant canon."},
+ {"name":"Delphi","lat":38.4824,"lon":22.5010,"type":"settlement","note":"Findspot of the Gallio inscription that anchors Pauline chronology."},
+ {"name":"Karnak","lat":25.7188,"lon":32.6573,"type":"structure","note":"Shoshenq I's campaign relief."},
+ {"name":"Qarqar","lat":35.7400,"lon":36.4400,"type":"settlement","note":"Battle of 853 BCE; location approximate."}
+]

@@ -1,0 +1,794 @@
+[
+ {
+  "i": 0,
+  "osis": "Gen",
+  "name": "Genesis",
+  "chapters": 50,
+  "testament": "OT",
+  "division": "Torah",
+  "composed": [
+   -950,
+   -450
+  ]
+ },
+ {
+  "i": 1,
+  "osis": "Exod",
+  "name": "Exodus",
+  "chapters": 40,
+  "testament": "OT",
+  "division": "Torah",
+  "composed": [
+   -950,
+   -450
+  ]
+ },
+ {
+  "i": 2,
+  "osis": "Lev",
+  "name": "Leviticus",
+  "chapters": 27,
+  "testament": "OT",
+  "division": "Torah",
+  "composed": [
+   -700,
+   -450
+  ]
+ },
+ {
+  "i": 3,
+  "osis": "Num",
+  "name": "Numbers",
+  "chapters": 36,
+  "testament": "OT",
+  "division": "Torah",
+  "composed": [
+   -700,
+   -450
+  ]
+ },
+ {
+  "i": 4,
+  "osis": "Deut",
+  "name": "Deuteronomy",
+  "chapters": 34,
+  "testament": "OT",
+  "division": "Torah",
+  "composed": [
+   -700,
+   -550
+  ]
+ },
+ {
+  "i": 5,
+  "osis": "Josh",
+  "name": "Joshua",
+  "chapters": 24,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -650,
+   -550
+  ]
+ },
+ {
+  "i": 6,
+  "osis": "Judg",
+  "name": "Judges",
+  "chapters": 21,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -650,
+   -550
+  ]
+ },
+ {
+  "i": 7,
+  "osis": "Ruth",
+  "name": "Ruth",
+  "chapters": 4,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -550,
+   -400
+  ]
+ },
+ {
+  "i": 8,
+  "osis": "1Sam",
+  "name": "1 Samuel",
+  "chapters": 31,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -630,
+   -540
+  ]
+ },
+ {
+  "i": 9,
+  "osis": "2Sam",
+  "name": "2 Samuel",
+  "chapters": 24,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -630,
+   -540
+  ]
+ },
+ {
+  "i": 10,
+  "osis": "1Kgs",
+  "name": "1 Kings",
+  "chapters": 22,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -620,
+   -540
+  ]
+ },
+ {
+  "i": 11,
+  "osis": "2Kgs",
+  "name": "2 Kings",
+  "chapters": 25,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -620,
+   -540
+  ]
+ },
+ {
+  "i": 12,
+  "osis": "1Chr",
+  "name": "1 Chronicles",
+  "chapters": 29,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -400,
+   -300
+  ]
+ },
+ {
+  "i": 13,
+  "osis": "2Chr",
+  "name": "2 Chronicles",
+  "chapters": 36,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -400,
+   -300
+  ]
+ },
+ {
+  "i": 14,
+  "osis": "Ezra",
+  "name": "Ezra",
+  "chapters": 10,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -400,
+   -300
+  ]
+ },
+ {
+  "i": 15,
+  "osis": "Neh",
+  "name": "Nehemiah",
+  "chapters": 13,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -400,
+   -300
+  ]
+ },
+ {
+  "i": 16,
+  "osis": "Esth",
+  "name": "Esther",
+  "chapters": 10,
+  "testament": "OT",
+  "division": "History",
+  "composed": [
+   -400,
+   -300
+  ]
+ },
+ {
+  "i": 17,
+  "osis": "Job",
+  "name": "Job",
+  "chapters": 42,
+  "testament": "OT",
+  "division": "Wisdom",
+  "composed": [
+   -600,
+   -400
+  ]
+ },
+ {
+  "i": 18,
+  "osis": "Ps",
+  "name": "Psalms",
+  "chapters": 150,
+  "testament": "OT",
+  "division": "Wisdom",
+  "composed": [
+   -1000,
+   -300
+  ]
+ },
+ {
+  "i": 19,
+  "osis": "Prov",
+  "name": "Proverbs",
+  "chapters": 31,
+  "testament": "OT",
+  "division": "Wisdom",
+  "composed": [
+   -700,
+   -300
+  ]
+ },
+ {
+  "i": 20,
+  "osis": "Eccl",
+  "name": "Ecclesiastes",
+  "chapters": 12,
+  "testament": "OT",
+  "division": "Wisdom",
+  "composed": [
+   -350,
+   -200
+  ]
+ },
+ {
+  "i": 21,
+  "osis": "Song",
+  "name": "Song of Solomon",
+  "chapters": 8,
+  "testament": "OT",
+  "division": "Wisdom",
+  "composed": [
+   -500,
+   -300
+  ]
+ },
+ {
+  "i": 22,
+  "osis": "Isa",
+  "name": "Isaiah",
+  "chapters": 66,
+  "testament": "OT",
+  "division": "Major Prophets",
+  "composed": [
+   -740,
+   -500
+  ]
+ },
+ {
+  "i": 23,
+  "osis": "Jer",
+  "name": "Jeremiah",
+  "chapters": 52,
+  "testament": "OT",
+  "division": "Major Prophets",
+  "composed": [
+   -626,
+   -560
+  ]
+ },
+ {
+  "i": 24,
+  "osis": "Lam",
+  "name": "Lamentations",
+  "chapters": 5,
+  "testament": "OT",
+  "division": "Major Prophets",
+  "composed": [
+   -586,
+   -540
+  ]
+ },
+ {
+  "i": 25,
+  "osis": "Ezek",
+  "name": "Ezekiel",
+  "chapters": 48,
+  "testament": "OT",
+  "division": "Major Prophets",
+  "composed": [
+   -593,
+   -560
+  ]
+ },
+ {
+  "i": 26,
+  "osis": "Dan",
+  "name": "Daniel",
+  "chapters": 12,
+  "testament": "OT",
+  "division": "Major Prophets",
+  "composed": [
+   -250,
+   -164
+  ]
+ },
+ {
+  "i": 27,
+  "osis": "Hos",
+  "name": "Hosea",
+  "chapters": 14,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -750,
+   -700
+  ]
+ },
+ {
+  "i": 28,
+  "osis": "Joel",
+  "name": "Joel",
+  "chapters": 3,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -450,
+   -350
+  ]
+ },
+ {
+  "i": 29,
+  "osis": "Amos",
+  "name": "Amos",
+  "chapters": 9,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -760,
+   -740
+  ]
+ },
+ {
+  "i": 30,
+  "osis": "Obad",
+  "name": "Obadiah",
+  "chapters": 1,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -586,
+   -550
+  ]
+ },
+ {
+  "i": 31,
+  "osis": "Jonah",
+  "name": "Jonah",
+  "chapters": 4,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -450,
+   -350
+  ]
+ },
+ {
+  "i": 32,
+  "osis": "Mic",
+  "name": "Micah",
+  "chapters": 7,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -737,
+   -690
+  ]
+ },
+ {
+  "i": 33,
+  "osis": "Nah",
+  "name": "Nahum",
+  "chapters": 3,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -663,
+   -612
+  ]
+ },
+ {
+  "i": 34,
+  "osis": "Hab",
+  "name": "Habakkuk",
+  "chapters": 3,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -640,
+   -598
+  ]
+ },
+ {
+  "i": 35,
+  "osis": "Zeph",
+  "name": "Zephaniah",
+  "chapters": 3,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -640,
+   -609
+  ]
+ },
+ {
+  "i": 36,
+  "osis": "Hag",
+  "name": "Haggai",
+  "chapters": 2,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -520,
+   -515
+  ]
+ },
+ {
+  "i": 37,
+  "osis": "Zech",
+  "name": "Zechariah",
+  "chapters": 14,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -520,
+   -480
+  ]
+ },
+ {
+  "i": 38,
+  "osis": "Mal",
+  "name": "Malachi",
+  "chapters": 4,
+  "testament": "OT",
+  "division": "Minor Prophets",
+  "composed": [
+   -460,
+   -430
+  ]
+ },
+ {
+  "i": 39,
+  "osis": "Matt",
+  "name": "Matthew",
+  "chapters": 28,
+  "testament": "NT",
+  "division": "Gospels",
+  "composed": [
+   70,
+   90
+  ]
+ },
+ {
+  "i": 40,
+  "osis": "Mark",
+  "name": "Mark",
+  "chapters": 16,
+  "testament": "NT",
+  "division": "Gospels",
+  "composed": [
+   66,
+   72
+  ]
+ },
+ {
+  "i": 41,
+  "osis": "Luke",
+  "name": "Luke",
+  "chapters": 24,
+  "testament": "NT",
+  "division": "Gospels",
+  "composed": [
+   80,
+   95
+  ]
+ },
+ {
+  "i": 42,
+  "osis": "John",
+  "name": "John",
+  "chapters": 21,
+  "testament": "NT",
+  "division": "Gospels",
+  "composed": [
+   90,
+   110
+  ]
+ },
+ {
+  "i": 43,
+  "osis": "Acts",
+  "name": "Acts",
+  "chapters": 28,
+  "testament": "NT",
+  "division": "Acts",
+  "composed": [
+   80,
+   95
+  ]
+ },
+ {
+  "i": 44,
+  "osis": "Rom",
+  "name": "Romans",
+  "chapters": 16,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   55,
+   58
+  ]
+ },
+ {
+  "i": 45,
+  "osis": "1Cor",
+  "name": "1 Corinthians",
+  "chapters": 16,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   53,
+   55
+  ]
+ },
+ {
+  "i": 46,
+  "osis": "2Cor",
+  "name": "2 Corinthians",
+  "chapters": 13,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   55,
+   57
+  ]
+ },
+ {
+  "i": 47,
+  "osis": "Gal",
+  "name": "Galatians",
+  "chapters": 6,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   48,
+   55
+  ]
+ },
+ {
+  "i": 48,
+  "osis": "Eph",
+  "name": "Ephesians",
+  "chapters": 6,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   60,
+   90
+  ]
+ },
+ {
+  "i": 49,
+  "osis": "Phil",
+  "name": "Philippians",
+  "chapters": 4,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   57,
+   62
+  ]
+ },
+ {
+  "i": 50,
+  "osis": "Col",
+  "name": "Colossians",
+  "chapters": 4,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   57,
+   80
+  ]
+ },
+ {
+  "i": 51,
+  "osis": "1Thess",
+  "name": "1 Thessalonians",
+  "chapters": 5,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   49,
+   52
+  ]
+ },
+ {
+  "i": 52,
+  "osis": "2Thess",
+  "name": "2 Thessalonians",
+  "chapters": 3,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   50,
+   90
+  ]
+ },
+ {
+  "i": 53,
+  "osis": "1Tim",
+  "name": "1 Timothy",
+  "chapters": 6,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   90,
+   110
+  ]
+ },
+ {
+  "i": 54,
+  "osis": "2Tim",
+  "name": "2 Timothy",
+  "chapters": 4,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   90,
+   110
+  ]
+ },
+ {
+  "i": 55,
+  "osis": "Titus",
+  "name": "Titus",
+  "chapters": 3,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   90,
+   110
+  ]
+ },
+ {
+  "i": 56,
+  "osis": "Phlm",
+  "name": "Philemon",
+  "chapters": 1,
+  "testament": "NT",
+  "division": "Pauline",
+  "composed": [
+   57,
+   62
+  ]
+ },
+ {
+  "i": 57,
+  "osis": "Heb",
+  "name": "Hebrews",
+  "chapters": 13,
+  "testament": "NT",
+  "division": "General",
+  "composed": [
+   60,
+   95
+  ]
+ },
+ {
+  "i": 58,
+  "osis": "Jas",
+  "name": "James",
+  "chapters": 5,
+  "testament": "NT",
+  "division": "General",
+  "composed": [
+   50,
+   90
+  ]
+ },
+ {
+  "i": 59,
+  "osis": "1Pet",
+  "name": "1 Peter",
+  "chapters": 5,
+  "testament": "NT",
+  "division": "General",
+  "composed": [
+   65,
+   90
+  ]
+ },
+ {
+  "i": 60,
+  "osis": "2Pet",
+  "name": "2 Peter",
+  "chapters": 3,
+  "testament": "NT",
+  "division": "General",
+  "composed": [
+   100,
+   130
+  ]
+ },
+ {
+  "i": 61,
+  "osis": "1John",
+  "name": "1 John",
+  "chapters": 5,
+  "testament": "NT",
+  "division": "General",
+  "composed": [
+   90,
+   110
+  ]
+ },
+ {
+  "i": 62,
+  "osis": "2John",
+  "name": "2 John",
+  "chapters": 1,
+  "testament": "NT",
+  "division": "General",
+  "composed": [
+   90,
+   110
+  ]
+ },
+ {
+  "i": 63,
+  "osis": "3John",
+  "name": "3 John",
+  "chapters": 1,
+  "testament": "NT",
+  "division": "General",
+  "composed": [
+   90,
+   110
+  ]
+ },
+ {
+  "i": 64,
+  "osis": "Jude",
+  "name": "Jude",
+  "chapters": 1,
+  "testament": "NT",
+  "division": "General",
+  "composed": [
+   90,
+   110
+  ]
+ },
+ {
+  "i": 65,
+  "osis": "Rev",
+  "name": "Revelation",
+  "chapters": 22,
+  "testament": "NT",
+  "division": "Apocalyptic",
+  "composed": [
+   90,
+   96
+  ]
+ }
+]

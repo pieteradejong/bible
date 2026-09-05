@@ -1,0 +1,2669 @@
+{
+ "people": [
+  {
+   "id": "Adam",
+   "name": "Adam",
+   "kjv": null,
+   "refs": [
+    "Gen.5.3",
+    "Gen.3.20"
+   ],
+   "age": 930,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Seth",
+   "name": "Seth",
+   "kjv": null,
+   "refs": [
+    "Gen.5.6"
+   ],
+   "age": 912,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Enosh",
+   "name": "Enosh",
+   "kjv": "Enos",
+   "refs": [
+    "Gen.5.9"
+   ],
+   "age": 905,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Kenan",
+   "name": "Kenan",
+   "kjv": "Cainan",
+   "refs": [
+    "Gen.5.12"
+   ],
+   "age": 910,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Mahalalel",
+   "name": "Mahalalel",
+   "kjv": "Mahalaleel",
+   "refs": [
+    "Gen.5.15"
+   ],
+   "age": 895,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jared",
+   "name": "Jared",
+   "kjv": null,
+   "refs": [
+    "Gen.5.18"
+   ],
+   "age": 962,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Enoch",
+   "name": "Enoch",
+   "kjv": null,
+   "refs": [
+    "Gen.5.21"
+   ],
+   "age": 365,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Methuselah",
+   "name": "Methuselah",
+   "kjv": null,
+   "refs": [
+    "Gen.5.25"
+   ],
+   "age": 969,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Lamech",
+   "name": "Lamech",
+   "kjv": null,
+   "refs": [
+    "Gen.5.28"
+   ],
+   "age": 777,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Noah",
+   "name": "Noah",
+   "kjv": null,
+   "refs": [
+    "Gen.5.32",
+    "Gen.10.1"
+   ],
+   "age": 950,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Shem",
+   "name": "Shem",
+   "kjv": null,
+   "refs": [
+    "Gen.11.10",
+    "Gen.10.1"
+   ],
+   "age": 600,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Arphaxad",
+   "name": "Arphaxad",
+   "kjv": null,
+   "refs": [
+    "Gen.11.12"
+   ],
+   "age": 438,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Shelah",
+   "name": "Shelah",
+   "kjv": "Salah",
+   "refs": [
+    "Gen.11.14"
+   ],
+   "age": 433,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Eber",
+   "name": "Eber",
+   "kjv": null,
+   "refs": [
+    "Gen.11.16"
+   ],
+   "age": 464,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Peleg",
+   "name": "Peleg",
+   "kjv": null,
+   "refs": [
+    "Gen.11.18"
+   ],
+   "age": 239,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Reu",
+   "name": "Reu",
+   "kjv": null,
+   "refs": [
+    "Gen.11.20"
+   ],
+   "age": 239,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Serug",
+   "name": "Serug",
+   "kjv": null,
+   "refs": [
+    "Gen.11.22"
+   ],
+   "age": 230,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Nahor",
+   "name": "Nahor",
+   "kjv": null,
+   "refs": [
+    "Gen.11.24"
+   ],
+   "age": 148,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Terah",
+   "name": "Terah",
+   "kjv": null,
+   "refs": [
+    "Gen.11.26",
+    "Gen.11.27"
+   ],
+   "age": 205,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Abraham",
+   "name": "Abraham",
+   "kjv": "Abram",
+   "refs": [
+    "Gen.11.27",
+    "Gen.16.15",
+    "Gen.21.3",
+    "Gen.17.15",
+    "Gen.16.3"
+   ],
+   "age": 175,
+   "lines": [
+    "primeval"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Perez",
+   "name": "Perez",
+   "kjv": "Pharez",
+   "refs": [
+    "Ruth.4.18",
+    "Gen.38.29"
+   ],
+   "age": null,
+   "lines": [
+    "judah"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Hezron",
+   "name": "Hezron",
+   "kjv": null,
+   "refs": [
+    "Ruth.4.18"
+   ],
+   "age": null,
+   "lines": [
+    "judah"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Ram",
+   "name": "Ram",
+   "kjv": null,
+   "refs": [
+    "Ruth.4.19"
+   ],
+   "age": null,
+   "lines": [
+    "judah"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Amminadab",
+   "name": "Amminadab",
+   "kjv": null,
+   "refs": [
+    "Ruth.4.19"
+   ],
+   "age": null,
+   "lines": [
+    "judah"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Nahshon",
+   "name": "Nahshon",
+   "kjv": "Naasson",
+   "refs": [
+    "Ruth.4.20"
+   ],
+   "age": null,
+   "lines": [
+    "judah"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Salmon",
+   "name": "Salmon",
+   "kjv": null,
+   "refs": [
+    "Ruth.4.20"
+   ],
+   "age": null,
+   "lines": [
+    "judah"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Boaz",
+   "name": "Boaz",
+   "kjv": "Booz",
+   "refs": [
+    "Ruth.4.21",
+    "Ruth.4.13"
+   ],
+   "age": null,
+   "lines": [
+    "judah"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Obed",
+   "name": "Obed",
+   "kjv": null,
+   "refs": [
+    "Ruth.4.21"
+   ],
+   "age": null,
+   "lines": [
+    "judah"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jesse",
+   "name": "Jesse",
+   "kjv": null,
+   "refs": [
+    "Ruth.4.22"
+   ],
+   "age": null,
+   "lines": [
+    "judah"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "David",
+   "name": "David",
+   "kjv": null,
+   "refs": [
+    "Ruth.4.22",
+    "Matt.1.6",
+    "Luke.3.31",
+    "2Sam.3.3",
+    "2Sam.5.14",
+    "2Sam.12.24",
+    "2Sam.11.27"
+   ],
+   "age": null,
+   "lines": [
+    "judah",
+    "matthew",
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Solomon",
+   "name": "Solomon",
+   "kjv": null,
+   "refs": [
+    "Matt.1.6",
+    "2Sam.12.24"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Rehoboam",
+   "name": "Rehoboam",
+   "kjv": "Roboam",
+   "refs": [
+    "Matt.1.7"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Abijah",
+   "name": "Abijah",
+   "kjv": "Abia",
+   "refs": [
+    "Matt.1.7"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Asa",
+   "name": "Asa",
+   "kjv": null,
+   "refs": [
+    "Matt.1.7"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jehoshaphat",
+   "name": "Jehoshaphat",
+   "kjv": "Josaphat",
+   "refs": [
+    "Matt.1.8"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Joram",
+   "name": "Joram",
+   "kjv": null,
+   "refs": [
+    "Matt.1.8"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Uzziah",
+   "name": "Uzziah",
+   "kjv": "Ozias",
+   "refs": [
+    "Matt.1.8"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jotham",
+   "name": "Jotham",
+   "kjv": "Joatham",
+   "refs": [
+    "Matt.1.9"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Ahaz",
+   "name": "Ahaz",
+   "kjv": "Achaz",
+   "refs": [
+    "Matt.1.9"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Hezekiah",
+   "name": "Hezekiah",
+   "kjv": "Ezekias",
+   "refs": [
+    "Matt.1.9"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Manasseh",
+   "name": "Manasseh",
+   "kjv": "Manasses",
+   "refs": [
+    "Matt.1.10"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Amon",
+   "name": "Amon",
+   "kjv": null,
+   "refs": [
+    "Matt.1.10"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Josiah",
+   "name": "Josiah",
+   "kjv": "Josias",
+   "refs": [
+    "Matt.1.10"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jeconiah",
+   "name": "Jeconiah",
+   "kjv": "Jechonias",
+   "refs": [
+    "Matt.1.11",
+    "1Chr.3.17"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Shealtiel",
+   "name": "Shealtiel",
+   "kjv": "Salathiel",
+   "refs": [
+    "Matt.1.12",
+    "Luke.3.27",
+    "1Chr.3.17"
+   ],
+   "age": null,
+   "lines": [
+    "matthew",
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Zerubbabel",
+   "name": "Zerubbabel",
+   "kjv": "Zorobabel",
+   "refs": [
+    "Matt.1.12",
+    "Luke.3.27"
+   ],
+   "age": null,
+   "lines": [
+    "matthew",
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Abiud",
+   "name": "Abiud",
+   "kjv": null,
+   "refs": [
+    "Matt.1.13"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Eliakim",
+   "name": "Eliakim",
+   "kjv": null,
+   "refs": [
+    "Matt.1.13"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Azor",
+   "name": "Azor",
+   "kjv": null,
+   "refs": [
+    "Matt.1.13"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Zadok",
+   "name": "Zadok",
+   "kjv": "Sadoc",
+   "refs": [
+    "Matt.1.14"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Achim",
+   "name": "Achim",
+   "kjv": null,
+   "refs": [
+    "Matt.1.14"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Eliud",
+   "name": "Eliud",
+   "kjv": null,
+   "refs": [
+    "Matt.1.14"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Eleazar",
+   "name": "Eleazar",
+   "kjv": null,
+   "refs": [
+    "Matt.1.15"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Matthan",
+   "name": "Matthan",
+   "kjv": null,
+   "refs": [
+    "Matt.1.15"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jacob (father of Joseph)",
+   "name": "Jacob (father of Joseph)",
+   "kjv": "Jacob",
+   "refs": [
+    "Matt.1.16"
+   ],
+   "age": null,
+   "lines": [
+    "matthew"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Joseph",
+   "name": "Joseph",
+   "kjv": null,
+   "refs": [
+    "Matt.1.16",
+    "Luke.3.23",
+    "Matt.1.18"
+   ],
+   "age": null,
+   "lines": [
+    "matthew",
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jesus",
+   "name": "Jesus",
+   "kjv": null,
+   "refs": [
+    "Matt.1.16",
+    "Luke.3.23"
+   ],
+   "age": null,
+   "lines": [
+    "matthew",
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Nathan",
+   "name": "Nathan",
+   "kjv": null,
+   "refs": [
+    "Luke.3.31",
+    "2Sam.5.14"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Mattatha",
+   "name": "Mattatha",
+   "kjv": null,
+   "refs": [
+    "Luke.3.31"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Menan",
+   "name": "Menan",
+   "kjv": null,
+   "refs": [
+    "Luke.3.31"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Melea",
+   "name": "Melea",
+   "kjv": null,
+   "refs": [
+    "Luke.3.31"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Eliakim (Luke)",
+   "name": "Eliakim (Luke)",
+   "kjv": "Eliakim",
+   "refs": [
+    "Luke.3.30"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jonan",
+   "name": "Jonan",
+   "kjv": null,
+   "refs": [
+    "Luke.3.30"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Joseph (of Jonan)",
+   "name": "Joseph (of Jonan)",
+   "kjv": "Joseph",
+   "refs": [
+    "Luke.3.30"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Judah (Luke)",
+   "name": "Judah (Luke)",
+   "kjv": "Juda",
+   "refs": [
+    "Luke.3.30"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Simeon",
+   "name": "Simeon",
+   "kjv": null,
+   "refs": [
+    "Luke.3.30"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Levi (of Simeon)",
+   "name": "Levi (of Simeon)",
+   "kjv": "Levi",
+   "refs": [
+    "Luke.3.29"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Matthat (of Levi)",
+   "name": "Matthat (of Levi)",
+   "kjv": "Matthat",
+   "refs": [
+    "Luke.3.29"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jorim",
+   "name": "Jorim",
+   "kjv": null,
+   "refs": [
+    "Luke.3.29"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Eliezer",
+   "name": "Eliezer",
+   "kjv": null,
+   "refs": [
+    "Luke.3.29"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Joshua (Luke)",
+   "name": "Joshua (Luke)",
+   "kjv": "Jose",
+   "refs": [
+    "Luke.3.29"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Er",
+   "name": "Er",
+   "kjv": null,
+   "refs": [
+    "Luke.3.28"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Elmodam",
+   "name": "Elmodam",
+   "kjv": null,
+   "refs": [
+    "Luke.3.28"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Cosam",
+   "name": "Cosam",
+   "kjv": null,
+   "refs": [
+    "Luke.3.28"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Addi",
+   "name": "Addi",
+   "kjv": null,
+   "refs": [
+    "Luke.3.28"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Melchi (of Addi)",
+   "name": "Melchi (of Addi)",
+   "kjv": "Melchi",
+   "refs": [
+    "Luke.3.28"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Neri",
+   "name": "Neri",
+   "kjv": null,
+   "refs": [
+    "Luke.3.27"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Rhesa",
+   "name": "Rhesa",
+   "kjv": null,
+   "refs": [
+    "Luke.3.27"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Joanna",
+   "name": "Joanna",
+   "kjv": null,
+   "refs": [
+    "Luke.3.27"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Judah (of Joanna)",
+   "name": "Judah (of Joanna)",
+   "kjv": "Juda",
+   "refs": [
+    "Luke.3.26"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Joseph (of Judah)",
+   "name": "Joseph (of Judah)",
+   "kjv": "Joseph",
+   "refs": [
+    "Luke.3.26"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Semei",
+   "name": "Semei",
+   "kjv": null,
+   "refs": [
+    "Luke.3.26"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Mattathias (of Semei)",
+   "name": "Mattathias (of Semei)",
+   "kjv": "Mattathias",
+   "refs": [
+    "Luke.3.26"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Maath",
+   "name": "Maath",
+   "kjv": null,
+   "refs": [
+    "Luke.3.26"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Naggai",
+   "name": "Naggai",
+   "kjv": "Nagge",
+   "refs": [
+    "Luke.3.25"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Esli",
+   "name": "Esli",
+   "kjv": null,
+   "refs": [
+    "Luke.3.25"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Nahum",
+   "name": "Nahum",
+   "kjv": "Naum",
+   "refs": [
+    "Luke.3.25"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Amos",
+   "name": "Amos",
+   "kjv": null,
+   "refs": [
+    "Luke.3.25"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Mattathias (of Amos)",
+   "name": "Mattathias (of Amos)",
+   "kjv": "Mattathias",
+   "refs": [
+    "Luke.3.25"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Joseph (of Mattathias)",
+   "name": "Joseph (of Mattathias)",
+   "kjv": "Joseph",
+   "refs": [
+    "Luke.3.24"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Jannai",
+   "name": "Jannai",
+   "kjv": "Janna",
+   "refs": [
+    "Luke.3.24"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Melchi (of Jannai)",
+   "name": "Melchi (of Jannai)",
+   "kjv": "Melchi",
+   "refs": [
+    "Luke.3.24"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Levi (of Melchi)",
+   "name": "Levi (of Melchi)",
+   "kjv": "Levi",
+   "refs": [
+    "Luke.3.24"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Matthat (of Levi 2)",
+   "name": "Matthat (of Levi 2)",
+   "kjv": "Matthat",
+   "refs": [
+    "Luke.3.24"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Heli",
+   "name": "Heli",
+   "kjv": null,
+   "refs": [
+    "Luke.3.23"
+   ],
+   "age": null,
+   "lines": [
+    "luke"
+   ],
+   "sex": "m"
+  },
+  {
+   "id": "Ham",
+   "name": "Ham",
+   "kjv": null,
+   "refs": [
+    "Gen.10.1",
+    "Gen.10.6"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Japheth",
+   "name": "Japheth",
+   "kjv": null,
+   "refs": [
+    "Gen.10.1"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Cush",
+   "name": "Cush",
+   "kjv": null,
+   "refs": [
+    "Gen.10.6",
+    "Gen.10.8"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Canaan",
+   "name": "Canaan",
+   "kjv": null,
+   "refs": [
+    "Gen.10.6"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Nimrod",
+   "name": "Nimrod",
+   "kjv": null,
+   "refs": [
+    "Gen.10.8"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Nahor (son of Terah)",
+   "name": "Nahor (son of Terah)",
+   "kjv": null,
+   "refs": [
+    "Gen.11.27"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Haran",
+   "name": "Haran",
+   "kjv": null,
+   "refs": [
+    "Gen.11.27"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Lot",
+   "name": "Lot",
+   "kjv": null,
+   "refs": [
+    "Gen.11.27"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Ishmael",
+   "name": "Ishmael",
+   "kjv": null,
+   "refs": [
+    "Gen.16.15"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Isaac",
+   "name": "Isaac",
+   "kjv": null,
+   "refs": [
+    "Gen.21.3",
+    "Gen.25.25",
+    "Gen.25.26",
+    "Gen.24.67"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Esau",
+   "name": "Esau",
+   "kjv": null,
+   "refs": [
+    "Gen.25.25"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Jacob",
+   "name": "Jacob",
+   "kjv": null,
+   "refs": [
+    "Gen.25.26",
+    "Gen.29.32",
+    "Gen.29.33",
+    "Gen.29.34",
+    "Gen.29.35",
+    "Gen.30.6",
+    "Gen.30.8",
+    "Gen.30.11",
+    "Gen.30.13",
+    "Gen.30.18",
+    "Gen.30.20",
+    "Gen.30.21",
+    "Gen.30.24",
+    "Gen.35.18",
+    "Gen.29.23",
+    "Gen.29.28"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Reuben",
+   "name": "Reuben",
+   "kjv": null,
+   "refs": [
+    "Gen.29.32"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Simeon (son of Jacob)",
+   "name": "Simeon (son of Jacob)",
+   "kjv": null,
+   "refs": [
+    "Gen.29.33"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Levi",
+   "name": "Levi",
+   "kjv": null,
+   "refs": [
+    "Gen.29.34"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Judah",
+   "name": "Judah",
+   "kjv": null,
+   "refs": [
+    "Gen.29.35",
+    "Gen.38.29",
+    "Gen.38.6"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Dan",
+   "name": "Dan",
+   "kjv": null,
+   "refs": [
+    "Gen.30.6"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Naphtali",
+   "name": "Naphtali",
+   "kjv": null,
+   "refs": [
+    "Gen.30.8"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Gad",
+   "name": "Gad",
+   "kjv": null,
+   "refs": [
+    "Gen.30.11"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Asher",
+   "name": "Asher",
+   "kjv": null,
+   "refs": [
+    "Gen.30.13"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Issachar",
+   "name": "Issachar",
+   "kjv": null,
+   "refs": [
+    "Gen.30.18"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Zebulun",
+   "name": "Zebulun",
+   "kjv": null,
+   "refs": [
+    "Gen.30.20"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Dinah",
+   "name": "Dinah",
+   "kjv": null,
+   "refs": [
+    "Gen.30.21"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Joseph (son of Jacob)",
+   "name": "Joseph (son of Jacob)",
+   "kjv": null,
+   "refs": [
+    "Gen.30.24",
+    "Gen.41.51",
+    "Gen.41.52"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Benjamin",
+   "name": "Benjamin",
+   "kjv": null,
+   "refs": [
+    "Gen.35.18"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Manasseh (son of Joseph)",
+   "name": "Manasseh (son of Joseph)",
+   "kjv": null,
+   "refs": [
+    "Gen.41.51"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Ephraim",
+   "name": "Ephraim",
+   "kjv": null,
+   "refs": [
+    "Gen.41.52"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Absalom",
+   "name": "Absalom",
+   "kjv": null,
+   "refs": [
+    "2Sam.3.3"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "m"
+  },
+  {
+   "id": "Eve",
+   "name": "Eve",
+   "kjv": null,
+   "refs": [
+    "Gen.3.20"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Sarah",
+   "name": "Sarah",
+   "kjv": null,
+   "refs": [
+    "Gen.17.15"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Hagar",
+   "name": "Hagar",
+   "kjv": null,
+   "refs": [
+    "Gen.16.3"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Rebekah",
+   "name": "Rebekah",
+   "kjv": null,
+   "refs": [
+    "Gen.24.67"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Leah",
+   "name": "Leah",
+   "kjv": null,
+   "refs": [
+    "Gen.29.23"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Rachel",
+   "name": "Rachel",
+   "kjv": null,
+   "refs": [
+    "Gen.29.28"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Tamar",
+   "name": "Tamar",
+   "kjv": null,
+   "refs": [
+    "Gen.38.6"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Ruth",
+   "name": "Ruth",
+   "kjv": null,
+   "refs": [
+    "Ruth.4.13"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Bathsheba",
+   "name": "Bathsheba",
+   "kjv": null,
+   "refs": [
+    "2Sam.11.27"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  },
+  {
+   "id": "Mary",
+   "name": "Mary",
+   "kjv": null,
+   "refs": [
+    "Matt.1.18"
+   ],
+   "age": null,
+   "lines": [],
+   "sex": "f"
+  }
+ ],
+ "edges": [
+  {
+   "p": "Adam",
+   "c": "Seth",
+   "ref": "Gen.5.6",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Seth",
+   "c": "Enosh",
+   "ref": "Gen.5.9",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Enosh",
+   "c": "Kenan",
+   "ref": "Gen.5.12",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Kenan",
+   "c": "Mahalalel",
+   "ref": "Gen.5.15",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Mahalalel",
+   "c": "Jared",
+   "ref": "Gen.5.18",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Jared",
+   "c": "Enoch",
+   "ref": "Gen.5.21",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Enoch",
+   "c": "Methuselah",
+   "ref": "Gen.5.25",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Methuselah",
+   "c": "Lamech",
+   "ref": "Gen.5.28",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Lamech",
+   "c": "Noah",
+   "ref": "Gen.5.32",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Shem",
+   "c": "Arphaxad",
+   "ref": "Gen.11.12",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Arphaxad",
+   "c": "Shelah",
+   "ref": "Gen.11.14",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Shelah",
+   "c": "Eber",
+   "ref": "Gen.11.16",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Eber",
+   "c": "Peleg",
+   "ref": "Gen.11.18",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Peleg",
+   "c": "Reu",
+   "ref": "Gen.11.20",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Reu",
+   "c": "Serug",
+   "ref": "Gen.11.22",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Serug",
+   "c": "Nahor",
+   "ref": "Gen.11.24",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Nahor",
+   "c": "Terah",
+   "ref": "Gen.11.26",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Terah",
+   "c": "Abraham",
+   "ref": "Gen.11.27",
+   "kind": "son",
+   "line": "primeval"
+  },
+  {
+   "p": "Perez",
+   "c": "Hezron",
+   "ref": "Ruth.4.18",
+   "kind": "son",
+   "line": "judah"
+  },
+  {
+   "p": "Hezron",
+   "c": "Ram",
+   "ref": "Ruth.4.19",
+   "kind": "son",
+   "line": "judah"
+  },
+  {
+   "p": "Ram",
+   "c": "Amminadab",
+   "ref": "Ruth.4.19",
+   "kind": "son",
+   "line": "judah"
+  },
+  {
+   "p": "Amminadab",
+   "c": "Nahshon",
+   "ref": "Ruth.4.20",
+   "kind": "son",
+   "line": "judah"
+  },
+  {
+   "p": "Nahshon",
+   "c": "Salmon",
+   "ref": "Ruth.4.20",
+   "kind": "son",
+   "line": "judah"
+  },
+  {
+   "p": "Salmon",
+   "c": "Boaz",
+   "ref": "Ruth.4.21",
+   "kind": "son",
+   "line": "judah"
+  },
+  {
+   "p": "Boaz",
+   "c": "Obed",
+   "ref": "Ruth.4.21",
+   "kind": "son",
+   "line": "judah"
+  },
+  {
+   "p": "Obed",
+   "c": "Jesse",
+   "ref": "Ruth.4.22",
+   "kind": "son",
+   "line": "judah"
+  },
+  {
+   "p": "Jesse",
+   "c": "David",
+   "ref": "Ruth.4.22",
+   "kind": "son",
+   "line": "judah"
+  },
+  {
+   "p": "David",
+   "c": "Solomon",
+   "ref": "Matt.1.6",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Solomon",
+   "c": "Rehoboam",
+   "ref": "Matt.1.7",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Rehoboam",
+   "c": "Abijah",
+   "ref": "Matt.1.7",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Abijah",
+   "c": "Asa",
+   "ref": "Matt.1.7",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Asa",
+   "c": "Jehoshaphat",
+   "ref": "Matt.1.8",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Jehoshaphat",
+   "c": "Joram",
+   "ref": "Matt.1.8",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Joram",
+   "c": "Uzziah",
+   "ref": "Matt.1.8",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Uzziah",
+   "c": "Jotham",
+   "ref": "Matt.1.9",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Jotham",
+   "c": "Ahaz",
+   "ref": "Matt.1.9",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Ahaz",
+   "c": "Hezekiah",
+   "ref": "Matt.1.9",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Hezekiah",
+   "c": "Manasseh",
+   "ref": "Matt.1.10",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Manasseh",
+   "c": "Amon",
+   "ref": "Matt.1.10",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Amon",
+   "c": "Josiah",
+   "ref": "Matt.1.10",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Josiah",
+   "c": "Jeconiah",
+   "ref": "Matt.1.11",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Jeconiah",
+   "c": "Shealtiel",
+   "ref": "Matt.1.12",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Shealtiel",
+   "c": "Zerubbabel",
+   "ref": "Matt.1.12",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Zerubbabel",
+   "c": "Abiud",
+   "ref": "Matt.1.13",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Abiud",
+   "c": "Eliakim",
+   "ref": "Matt.1.13",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Eliakim",
+   "c": "Azor",
+   "ref": "Matt.1.13",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Azor",
+   "c": "Zadok",
+   "ref": "Matt.1.14",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Zadok",
+   "c": "Achim",
+   "ref": "Matt.1.14",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Achim",
+   "c": "Eliud",
+   "ref": "Matt.1.14",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Eliud",
+   "c": "Eleazar",
+   "ref": "Matt.1.15",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Eleazar",
+   "c": "Matthan",
+   "ref": "Matt.1.15",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Matthan",
+   "c": "Jacob (father of Joseph)",
+   "ref": "Matt.1.16",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Jacob (father of Joseph)",
+   "c": "Joseph",
+   "ref": "Matt.1.16",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "Joseph",
+   "c": "Jesus",
+   "ref": "Matt.1.16",
+   "kind": "son",
+   "line": "matthew"
+  },
+  {
+   "p": "David",
+   "c": "Nathan",
+   "ref": "Luke.3.31",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Nathan",
+   "c": "Mattatha",
+   "ref": "Luke.3.31",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Mattatha",
+   "c": "Menan",
+   "ref": "Luke.3.31",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Menan",
+   "c": "Melea",
+   "ref": "Luke.3.31",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Melea",
+   "c": "Eliakim (Luke)",
+   "ref": "Luke.3.30",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Eliakim (Luke)",
+   "c": "Jonan",
+   "ref": "Luke.3.30",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Jonan",
+   "c": "Joseph (of Jonan)",
+   "ref": "Luke.3.30",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Joseph (of Jonan)",
+   "c": "Judah (Luke)",
+   "ref": "Luke.3.30",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Judah (Luke)",
+   "c": "Simeon",
+   "ref": "Luke.3.30",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Simeon",
+   "c": "Levi (of Simeon)",
+   "ref": "Luke.3.29",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Levi (of Simeon)",
+   "c": "Matthat (of Levi)",
+   "ref": "Luke.3.29",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Matthat (of Levi)",
+   "c": "Jorim",
+   "ref": "Luke.3.29",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Jorim",
+   "c": "Eliezer",
+   "ref": "Luke.3.29",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Eliezer",
+   "c": "Joshua (Luke)",
+   "ref": "Luke.3.29",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Joshua (Luke)",
+   "c": "Er",
+   "ref": "Luke.3.28",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Er",
+   "c": "Elmodam",
+   "ref": "Luke.3.28",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Elmodam",
+   "c": "Cosam",
+   "ref": "Luke.3.28",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Cosam",
+   "c": "Addi",
+   "ref": "Luke.3.28",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Addi",
+   "c": "Melchi (of Addi)",
+   "ref": "Luke.3.28",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Melchi (of Addi)",
+   "c": "Neri",
+   "ref": "Luke.3.27",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Neri",
+   "c": "Shealtiel",
+   "ref": "Luke.3.27",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Zerubbabel",
+   "c": "Rhesa",
+   "ref": "Luke.3.27",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Rhesa",
+   "c": "Joanna",
+   "ref": "Luke.3.27",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Joanna",
+   "c": "Judah (of Joanna)",
+   "ref": "Luke.3.26",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Judah (of Joanna)",
+   "c": "Joseph (of Judah)",
+   "ref": "Luke.3.26",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Joseph (of Judah)",
+   "c": "Semei",
+   "ref": "Luke.3.26",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Semei",
+   "c": "Mattathias (of Semei)",
+   "ref": "Luke.3.26",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Mattathias (of Semei)",
+   "c": "Maath",
+   "ref": "Luke.3.26",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Maath",
+   "c": "Naggai",
+   "ref": "Luke.3.25",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Naggai",
+   "c": "Esli",
+   "ref": "Luke.3.25",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Esli",
+   "c": "Nahum",
+   "ref": "Luke.3.25",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Nahum",
+   "c": "Amos",
+   "ref": "Luke.3.25",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Amos",
+   "c": "Mattathias (of Amos)",
+   "ref": "Luke.3.25",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Mattathias (of Amos)",
+   "c": "Joseph (of Mattathias)",
+   "ref": "Luke.3.24",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Joseph (of Mattathias)",
+   "c": "Jannai",
+   "ref": "Luke.3.24",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Jannai",
+   "c": "Melchi (of Jannai)",
+   "ref": "Luke.3.24",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Melchi (of Jannai)",
+   "c": "Levi (of Melchi)",
+   "ref": "Luke.3.24",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Levi (of Melchi)",
+   "c": "Matthat (of Levi 2)",
+   "ref": "Luke.3.24",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Matthat (of Levi 2)",
+   "c": "Heli",
+   "ref": "Luke.3.23",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Heli",
+   "c": "Joseph",
+   "ref": "Luke.3.23",
+   "kind": "son",
+   "line": "luke"
+  },
+  {
+   "p": "Noah",
+   "c": "Shem",
+   "ref": "Gen.10.1",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Noah",
+   "c": "Ham",
+   "ref": "Gen.10.1",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Noah",
+   "c": "Japheth",
+   "ref": "Gen.10.1",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Ham",
+   "c": "Cush",
+   "ref": "Gen.10.6",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Ham",
+   "c": "Canaan",
+   "ref": "Gen.10.6",
+   "kind": "son",
+   "line": "other",
+   "note": "Cursed in Gen 9:25; the ancestor named for the land Israel enters."
+  },
+  {
+   "p": "Cush",
+   "c": "Nimrod",
+   "ref": "Gen.10.8",
+   "kind": "son",
+   "line": "other",
+   "note": "\"A mighty hunter before the LORD\"; founder of Babel and Nineveh."
+  },
+  {
+   "p": "Terah",
+   "c": "Nahor (son of Terah)",
+   "ref": "Gen.11.27",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Terah",
+   "c": "Haran",
+   "ref": "Gen.11.27",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Haran",
+   "c": "Lot",
+   "ref": "Gen.11.27",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Abraham",
+   "c": "Ishmael",
+   "ref": "Gen.16.15",
+   "kind": "son",
+   "line": "other",
+   "note": "By Hagar. Ancestor of twelve princes (Gen 25:16)."
+  },
+  {
+   "p": "Abraham",
+   "c": "Isaac",
+   "ref": "Gen.21.3",
+   "kind": "son",
+   "line": "other",
+   "note": "The child of the promise."
+  },
+  {
+   "p": "Isaac",
+   "c": "Esau",
+   "ref": "Gen.25.25",
+   "kind": "son",
+   "line": "other",
+   "note": "The elder twin; ancestor of Edom."
+  },
+  {
+   "p": "Isaac",
+   "c": "Jacob",
+   "ref": "Gen.25.26",
+   "kind": "son",
+   "line": "other",
+   "note": "Renamed Israel in Gen 32:28."
+  },
+  {
+   "p": "Jacob",
+   "c": "Reuben",
+   "ref": "Gen.29.32",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Simeon (son of Jacob)",
+   "ref": "Gen.29.33",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Levi",
+   "ref": "Gen.29.34",
+   "kind": "son",
+   "line": "other",
+   "note": "Ancestor of the priestly tribe."
+  },
+  {
+   "p": "Jacob",
+   "c": "Judah",
+   "ref": "Gen.29.35",
+   "kind": "son",
+   "line": "other",
+   "note": "The royal line runs through him."
+  },
+  {
+   "p": "Jacob",
+   "c": "Dan",
+   "ref": "Gen.30.6",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Naphtali",
+   "ref": "Gen.30.8",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Gad",
+   "ref": "Gen.30.11",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Asher",
+   "ref": "Gen.30.13",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Issachar",
+   "ref": "Gen.30.18",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Zebulun",
+   "ref": "Gen.30.20",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Dinah",
+   "ref": "Gen.30.21",
+   "kind": "daughter",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Joseph (son of Jacob)",
+   "ref": "Gen.30.24",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Jacob",
+   "c": "Benjamin",
+   "ref": "Gen.35.18",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Joseph (son of Jacob)",
+   "c": "Manasseh (son of Joseph)",
+   "ref": "Gen.41.51",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Joseph (son of Jacob)",
+   "c": "Ephraim",
+   "ref": "Gen.41.52",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Judah",
+   "c": "Perez",
+   "ref": "Gen.38.29",
+   "kind": "son",
+   "line": "other",
+   "note": "By Tamar, his daughter-in-law (Gen 38)."
+  },
+  {
+   "p": "David",
+   "c": "Absalom",
+   "ref": "2Sam.3.3",
+   "kind": "son",
+   "line": "other"
+  },
+  {
+   "p": "Adam",
+   "c": "Eve",
+   "ref": "Gen.3.20",
+   "kind": "spouse",
+   "line": "spouse"
+  },
+  {
+   "p": "Abraham",
+   "c": "Sarah",
+   "ref": "Gen.17.15",
+   "kind": "spouse",
+   "line": "spouse"
+  },
+  {
+   "p": "Abraham",
+   "c": "Hagar",
+   "ref": "Gen.16.3",
+   "kind": "spouse",
+   "line": "spouse"
+  },
+  {
+   "p": "Isaac",
+   "c": "Rebekah",
+   "ref": "Gen.24.67",
+   "kind": "spouse",
+   "line": "spouse"
+  },
+  {
+   "p": "Jacob",
+   "c": "Leah",
+   "ref": "Gen.29.23",
+   "kind": "spouse",
+   "line": "spouse"
+  },
+  {
+   "p": "Jacob",
+   "c": "Rachel",
+   "ref": "Gen.29.28",
+   "kind": "spouse",
+   "line": "spouse"
+  },
+  {
+   "p": "Judah",
+   "c": "Tamar",
+   "ref": "Gen.38.6",
+   "kind": "spouse",
+   "line": "spouse"
+  },
+  {
+   "p": "Boaz",
+   "c": "Ruth",
+   "ref": "Ruth.4.13",
+   "kind": "spouse",
+   "line": "spouse"
+  },
+  {
+   "p": "David",
+   "c": "Bathsheba",
+   "ref": "2Sam.11.27",
+   "kind": "spouse",
+   "line": "spouse"
+  },
+  {
+   "p": "Joseph",
+   "c": "Mary",
+   "ref": "Matt.1.18",
+   "kind": "spouse",
+   "line": "spouse"
+  }
+ ],
+ "lines": {
+  "primeval": "Adam to Abraham (Genesis 5 and 11)",
+  "judah": "Perez to David (Ruth 4)",
+  "matthew": "David to Jesus via Solomon (Matthew 1)",
+  "luke": "David to Jesus via Nathan (Luke 3)",
+  "other": "Named family relationships outside the main chains",
+  "spouse": "Marriages"
+ }
+}

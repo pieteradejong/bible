@@ -1,0 +1,20 @@
+# Third-party source data: fetched by scripts/fetch_sources.py, never committed.
+# Each source has its own license and changes upstream; see README "Data sources".
+data/raw/
+
+# Generated view data: rebuilt by `make data` from data/raw/ + data/curated/.
+web/data/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp

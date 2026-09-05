@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas &middot; Visualising the Bible</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+  .leaflet-container { background: #0d0c0b; font: inherit; }
+  /* OpenStreetMap's standard tiles are light; invert and desaturate them so the
+     map sits in the same dark palette as everything else. */
+  .basemap {
+    filter: invert(1) hue-rotate(180deg) brightness(.78) contrast(.92) saturate(.55);
+  }
+  .leaflet-tooltip {
+    background: #0c0b0a; border: 1px solid var(--line); color: var(--ink);
+    box-shadow: 0 6px 20px rgba(0,0,0,.5); font-size: 12px;
+  }
+  .leaflet-tooltip-top:before { border-top-color: var(--line); }
+  .leaflet-bar a { background: var(--panel); color: var(--ink); border-color: var(--line); }
+  .leaflet-bar a:hover { background: var(--panel-2); }
+  .leaflet-control-attribution {
+    background: rgba(18,16,14,.85) !important; color: var(--faint) !important;
+  }
+  .leaflet-control-attribution a { color: var(--muted) !important; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head>
+<body>
+<script type="module" src="js/atlas.js"></script>
+</body>
+</html>

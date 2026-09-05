@@ -1,0 +1,33 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Pieter de Jong
+
+The contents of data/curated/ -- the canon table, eras, events, people,
+journeys and supplemental place coordinates -- are licensed under a Creative
+Commons Attribution 4.0 International License.
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, link to the license, and
+indicate if changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:          https://creativecommons.org/licenses/by/4.0/
+
+Attribution:
+  Curated biblical chronology and journey data by Pieter de Jong,
+  https://github.com/pieteradejong/bible, CC BY 4.0.
+
+This material was compiled from standard reference works. Where it restates
+externally attested dates (Assyrian and Babylonian records, Roman
+inscriptions), those facts are not themselves copyrightable; the selection,
+arrangement, certainty grading and annotation are.
+
+---
+
+The code in this repository is licensed MIT instead; see LICENSE.
+
+Third-party data downloaded by scripts/fetch_sources.py is not covered by this
+license. In particular, OpenBible.info's cross-reference and geocoding
+datasets are separately licensed CC BY 4.0 by OpenBible.info, and their
+geometry incorporates OpenStreetMap data under ODbL 1.0. See the "Data
+sources" section of README.md.

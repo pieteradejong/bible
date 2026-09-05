@@ -1,0 +1,169 @@
+/* Shared shell for every view: dark ink, warm paper accents, one type scale. */
+:root {
+  --bg: #12100e;
+  --panel: #1b1917;
+  --panel-2: #252220;
+  --line: #34302c;
+  --ink: #ede9e4;
+  --muted: #a29a92;
+  --faint: #6f6862;
+  --accent: #e0a458;
+
+  /* How sure we are of a date or an identification. Used everywhere. */
+  --attested: #5eb87a;
+  --conventional: #6d9fe0;
+  --traditional: #e0a458;
+  --disputed: #d9736a;
+  --unknown: #7b736c;
+
+  /* Narrative lanes. */
+  --lane-narrative: #e0a458;
+  --lane-israel: #6d9fe0;
+  --lane-empires: #a98bd6;
+  --lane-church: #5eb87a;
+  --lane-text: #58b0b8;
+  --lane-exile: #8d8378;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: ui-sans-serif, -apple-system, "Segoe UI", Inter, system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; height: 100%;
+  background: var(--bg); color: var(--ink);
+  font: 14px/1.55 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The nav shell injects <header> and each view appends <main> as siblings of
+   body, so body itself has to be the flex column -- otherwise <main> collapses
+   to its content height and every full-height stage is cut off. */
+body { display: flex; flex-direction: column; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- shell ---- */
+header.bar {
+  display: flex; align-items: baseline; gap: 22px;
+  padding: 10px 18px; border-bottom: 1px solid var(--line);
+  background: var(--panel); flex: 0 0 auto;
+}
+header.bar h1 {
+  margin: 0; font: 600 15px/1 var(--serif); letter-spacing: .02em;
+}
+header.bar h1 a { color: var(--ink); }
+nav.views { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+nav.views a {
+  padding: 4px 10px; border-radius: 5px; color: var(--muted);
+  font-size: 12.5px; border: 1px solid transparent;
+}
+nav.views a:hover { background: var(--panel-2); color: var(--ink); text-decoration: none; }
+nav.views a[aria-current] {
+  color: var(--ink); background: var(--panel-2); border-color: var(--line);
+}
+
+main { flex: 1 1 auto; min-height: 0; display: flex; }
+
+/* ---- side panel ---- */
+aside {
+  width: 296px; flex: 0 0 296px; overflow-y: auto;
+  border-right: 1px solid var(--line); background: var(--panel);
+  padding: 14px 16px 40px;
+}
+aside.right { border-right: none; border-left: 1px solid var(--line); }
+aside h2 {
+  margin: 18px 0 8px; font: 600 11px/1 var(--sans);
+  letter-spacing: .09em; text-transform: uppercase; color: var(--faint);
+}
+aside h2:first-child { margin-top: 0; }
+
+.stage { flex: 1 1 auto; position: relative; min-width: 0; overflow: hidden; }
+
+/* ---- controls ---- */
+.control { margin-bottom: 12px; }
+.control label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+select, input[type="search"], input[type="text"], button {
+  width: 100%; padding: 6px 8px; font: inherit; font-size: 13px;
+  color: var(--ink); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 5px;
+}
+button { cursor: pointer; }
+button:hover { background: var(--line); }
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+.checks { display: flex; flex-direction: column; gap: 5px; }
+.checks label {
+  display: flex; align-items: center; gap: 7px; cursor: pointer;
+  font-size: 12.5px; color: var(--ink); margin: 0;
+}
+.checks input { accent-color: var(--accent); margin: 0; }
+.swatch {
+  width: 10px; height: 10px; border-radius: 2px; flex: 0 0 10px;
+  background: var(--c, var(--muted));
+}
+.count { margin-left: auto; color: var(--faint); font: 11px var(--mono); }
+
+/* ---- legend / notes ---- */
+.note {
+  font-size: 12px; line-height: 1.5; color: var(--muted);
+  border-left: 2px solid var(--line); padding-left: 10px; margin: 10px 0;
+}
+.hint { font-size: 11.5px; color: var(--faint); margin-top: 6px; }
+
+/* ---- tooltip ---- */
+.tip {
+  position: fixed; z-index: 60; pointer-events: none; max-width: 320px;
+  background: #0c0b0a; border: 1px solid var(--line); border-radius: 6px;
+  padding: 9px 11px; font-size: 12.5px; line-height: 1.45;
+  box-shadow: 0 8px 28px rgba(0,0,0,.55); opacity: 0; transition: opacity .1s;
+}
+.tip.on { opacity: 1; }
+.tip b { display: block; font-size: 13px; margin-bottom: 3px; }
+.tip .meta { color: var(--muted); font-size: 11.5px; }
+.tip .verse { font-family: var(--serif); color: var(--ink); margin-top: 6px; }
+
+/* ---- scripture ---- */
+.verse-text { font-family: var(--serif); font-size: 15px; line-height: 1.65; }
+.verse-text i { color: var(--muted); font-style: italic; }
+.ref {
+  font: 12px var(--mono); color: var(--accent); cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ---- misc ---- */
+.pill {
+  display: inline-block; padding: 1px 7px; border-radius: 999px;
+  font-size: 10.5px; letter-spacing: .04em; text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+.loading {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  color: var(--faint); font-size: 13px;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #322e2a; border-radius: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ---- narrow screens ---------------------------------------------------- */
+/* Two 296px panels leave nothing for the chart on a laptop in split view, so
+   shed the right-hand panel first, then the left, then stack. */
+@media (max-width: 1240px) {
+  aside { width: 240px; flex-basis: 240px; }
+}
+@media (max-width: 1040px) {
+  aside.right { position: fixed; right: 0; top: 41px; bottom: 0; z-index: 40;
+                width: 300px; flex-basis: 300px; box-shadow: -10px 0 30px rgba(0,0,0,.5); }
+}
+@media (max-width: 780px) {
+  main { flex-direction: column; }
+  aside, aside.right { position: static; width: auto; flex: 0 0 auto;
+                       border: none; border-bottom: 1px solid var(--line);
+                       max-height: 40vh; box-shadow: none; }
+  .stage { min-height: 60vh; }
+  header.bar { flex-wrap: wrap; gap: 10px 16px; }
+  nav.views { margin-left: 0; }
+}

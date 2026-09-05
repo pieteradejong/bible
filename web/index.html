@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Visualising the Bible</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+  main { display: block; overflow-y: auto; }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 44px 32px 90px; }
+  .lede { font: 400 19px/1.6 var(--serif); color: var(--ink); max-width: 62ch; }
+  .lede + p { max-width: 66ch; color: var(--muted); font-size: 14.5px; }
+  .cards { display: grid; gap: 16px; margin: 34px 0 10px;
+           grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); }
+  .card {
+    display: block; padding: 18px 18px 20px; border: 1px solid var(--line);
+    border-radius: 9px; background: var(--panel); color: var(--ink);
+    transition: border-color .15s, transform .15s, background .15s;
+  }
+  .card:hover { border-color: var(--accent); background: var(--panel-2);
+                transform: translateY(-2px); text-decoration: none; }
+  .card h3 { margin: 0 0 6px; font: 600 15px/1.2 var(--serif); }
+  .card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.55; }
+  .card .n { display: block; margin-top: 11px; font: 11px var(--mono); color: var(--accent); }
+  .stats { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line);
+           border-radius: 8px; overflow: hidden; margin: 30px 0;
+           grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 720px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--panel); padding: 14px 16px; }
+  .stat b { display: block; font: 600 21px/1.1 var(--serif); color: var(--ink); }
+  .stat span { font-size: 11.5px; color: var(--faint); }
+  h2.sec { font: 600 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase;
+           color: var(--faint); margin: 42px 0 14px; }
+  table.key { border-collapse: collapse; font-size: 13.5px; max-width: 720px; }
+  table.key td { padding: 7px 14px 7px 0; vertical-align: top; border-top: 1px solid var(--line); }
+  table.key tr:first-child td { border-top: none; }
+  table.key td:first-child { white-space: nowrap; font-weight: 600; }
+  table.key td:last-child { color: var(--muted); }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+         margin-right: 8px; vertical-align: 1px; }
+  code { font: 12.5px var(--mono); background: var(--panel-2); padding: 1px 5px;
+         border-radius: 3px; color: var(--ink); }
+</style>
+</head>
+<body>
+<main><div class="wrap">
+  <p class="lede">Six ways into the same text: when things happened, where they
+  happened, who descended from whom, how the parts quote and echo one another,
+  and the words themselves with every reference made walkable.</p>
+  <p>Old Testament and New, 66 books, built from public-domain text and openly
+  licensed scholarly data. Nothing here smooths over disagreement — where a date
+  or a location is contested, the view says so.</p>
+
+  <div class="cards" id="cards"></div>
+  <div class="stats" id="stats"></div>
+
+  <h2 class="sec">How to read the colours</h2>
+  <table class="key">
+    <tr><td><span class="dot" style="background:var(--attested)"></span>Attested</td>
+        <td>Fixed by a source outside the Bible — an inscription, a Babylonian
+            chronicle, a datable reign. The fall of Samaria in 722 BCE, Gallio's
+            proconsulship in 51 CE.</td></tr>
+    <tr><td><span class="dot" style="background:var(--conventional)"></span>Conventional</td>
+        <td>The date most scholars work with, inferred from the text and its
+            setting rather than documented. Solomon's temple, the crucifixion.</td></tr>
+    <tr><td><span class="dot" style="background:var(--traditional)"></span>Traditional</td>
+        <td>Derived from the Bible's own internal chronology, with no external
+            anchor at all. Everything before the monarchy sits here.</td></tr>
+    <tr><td><span class="dot" style="background:var(--disputed)"></span>Disputed</td>
+        <td>Serious competing proposals exist. The Exodus appears twice, at 1446
+            and at 1260 BCE, because the evidence genuinely points both ways.</td></tr>
+  </table>
+
+  <h2 class="sec">Where the data comes from</h2>
+  <table class="key">
+    <tr><td>Text</td><td>King James Version, public domain.</td></tr>
+    <tr><td>Cross-references</td><td><a href="https://www.openbible.info/labs/cross-references/">OpenBible.info</a>,
+        CC-BY — 344,799 links, each carrying the votes readers gave it.</td></tr>
+    <tr><td>Geography</td><td><a href="https://github.com/openbibleinfo/Bible-Geocoding-Data">Bible Geocoding Data</a>,
+        CC-BY — every identifiable place, with the scholarly confidence in each siting.</td></tr>
+    <tr><td>Chronology</td><td>Hand-authored for this project from standard reference
+        works, and validated against the text on every build. See <code>data/curated/</code>.</td></tr>
+    <tr><td>Genealogy</td><td>Hand-authored from Genesis 5 and 11, Ruth 4, Matthew 1
+        and Luke 3. Both New Testament genealogies are recorded in full, unreconciled.</td></tr>
+    <tr><td>Translations</td><td><a href="https://github.com/scrollmapper/bible_databases">scrollmapper</a>
+        \u2014 Wycliffe (c.1395), Tyndale (1525\u201330), Darby (1890), Young's Literal
+        (1898) and the ASV (1901), all public domain.</td></tr>
+  </table>
+
+  <h2 class="sec">Rebuilding</h2>
+  <p style="color:var(--muted);font-size:13.5px;max-width:66ch">
+    <code>make data</code> downloads the sources and regenerates everything under
+    <code>web/data/</code>; <code>make serve</code> puts it on
+    <code>localhost:8000</code>. Neither the sources nor the generated files are
+    committed. Full detail in the README.</p>
+</div></main>
+
+<script type="module">
+import { shell, load } from "./js/common.js";
+shell("About");
+
+const cards = [
+  { href: "timeline.html", h: "Timeline",
+    p: "Four thousand years on one zoomable axis: eras, kings, prophets, empires, and when each book was written — coloured by how firmly the date is known.",
+    n: (d) => `${d.tl.events.length} events · ${d.tl.people.length} figures · ${d.tl.eras.length} eras` },
+  { href: "atlas.html", h: "Atlas",
+    p: "Every place the Bible names that can be put on a map, plus the routes: Abraham's migration, the Exodus, the road into exile, all four of Paul's voyages.",
+    n: (d) => `${d.pm.count.toLocaleString()} places · ${d.pm.contested.toLocaleString()} with rival sites · ${d.jr.length} routes` },
+  { href: "network.html", h: "Cross-references",
+    p: "The whole citation web at once — an arc for each of the chapter pairs readers have linked, and a 66×66 matrix of which book leans on which.",
+    n: (d) => `${d.xb.total.toLocaleString()} links · ${d.xc.edges.length.toLocaleString()} chapter pairs` },
+  { href: "quotations.html", h: "Quotations",
+    p: "Direct quotation separated from loose allusion by measurement, not assertion \u2014 the longest run of words each New Testament verse shares with the Old Testament verse it references.",
+    n: (d) => `${d.qt.pairs.length.toLocaleString()} scored pairs \u00b7 ${(d.qt.classes.find(([k]) => k === "quotation")?.[1] ?? 0)} outright quotations` },
+  { href: "genealogy.html", h: "Genealogy",
+    p: "Descent lines as a graph, generation by generation \u2014 Adam to Abraham, Perez to David, and the two irreconcilable genealogies of Jesus running in parallel.",
+    n: (d) => `${d.gn.people.length} people \u00b7 ${d.gn.edges.length} links` },
+  { href: "reader.html", h: "Reader",
+    p: "The text with its links live: references in the margin, place names that open on the map, and six centuries of English rendering stacked under each verse.",
+    n: (d) => `31,100 verses \u00b7 ${d.tr.length} translations` },
+];
+
+const [tl, pm, jr, xb, xc, qt, gn, tr, gm] = await Promise.all([
+  load("timeline.json"), load("places_meta.json"), load("journeys.json"),
+  load("xref_books.json"), load("xref_chapters.json"),
+  load("quotations.json"), load("genealogy.json"), load("translations.json"),
+  load("geometry.json"),
+]);
+const d = { tl, pm, jr, xb, xc, qt, gn, tr, gm };
+
+document.getElementById("cards").innerHTML = cards.map((c) => `
+  <a class="card" href="${c.href}"><h3>${c.h}</h3><p>${c.p}</p>
+   <span class="n">${c.n(d)}</span></a>`).join("");
+
+const stats = [
+  [tl.books.length, "books"],
+  ["31,100", "verses"],
+  [xb.total.toLocaleString(), "cross-references"],
+  [pm.count.toLocaleString(), "mapped places"],
+  [pm.mentions.toLocaleString(), "place mentions"],
+  [tl.events.length + tl.people.length, "dated entries"],
+  [Object.keys(gm).length, "drawn regions & rivers"],
+  [tr.length, "translations"],
+];
+document.getElementById("stats").innerHTML = stats.map(([n, l]) =>
+  `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
+</script>
+</body>
+</html>
