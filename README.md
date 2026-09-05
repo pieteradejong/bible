@@ -23,7 +23,11 @@ make gzip     # optional: pre-compress web/data (32 MB -> 9.1 MB)
 make serve    # http://localhost:8000
 ```
 
-`make data` fetches ~110 MB and takes a couple of minutes. Neither the downloaded
+`make data` fetches ~110 MB and takes a couple of minutes. It leaves ~166 MB in
+`data/raw/` (mostly the 3,683 per-place GeoJSON files, of which 648 are actually
+drawn) and ~41 MB of derived files in `web/data/`. Both are gitignored and
+regenerable; `make clean` drops the derived half and keeps the downloads, so a
+rebuild needs no network. Neither the downloaded
 sources nor the generated files are committed — both are reproducible from this
 repo plus a network connection.
 
