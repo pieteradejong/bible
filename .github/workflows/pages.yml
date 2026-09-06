@@ -1,0 +1,87 @@
+# Build the derived data, then publish the site.
+#
+# web/data/ is gitignored on purpose -- it is 31 MB of files a build regenerates
+# from data/raw/ plus data/curated/. So a plain Pages deploy would ship a site
+# with no data. Building here first also makes this the test suite: build_all.py
+# runs build_timeline.py last, which refuses to emit anything if a hand-authored
+# scripture reference or place name does not resolve against the real text and
+# gazetteer. A validation failure therefore blocks the deploy.
+
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; let a newer push supersede a queued one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # The sources are ~110 MB and change upstream only occasionally. Rotate
+      # the cache weekly so a stale copy can never pin the data indefinitely.
+      - name: Week stamp for the source cache
+        id: week
+        run: echo "key=$(date -u +%G-W%V)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache downloaded sources
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: sources-${{ steps.week.outputs.key }}-${{ hashFiles('scripts/fetch_sources.py') }}
+          restore-keys: |
+            sources-${{ steps.week.outputs.key }}-
+
+      - name: Fetch sources and build everything
+        run: python scripts/build_all.py
+
+      # A truncated or reshaped upstream file should break the build, not
+      # silently ship a thinner site. These are the figures the README quotes.
+      # A truncated or reshaped upstream file should break the build, not
+      # silently ship a thinner site. These are the figures the README quotes.
+      - name: Check the headline invariants
+        run: python scripts/check_invariants.py
+
+      - uses: actions/configure-pages@v5
+        # Turns Pages on for the repo on the first run.
+        with:
+          enablement: true
+
+      # The .json.gz files exist for `make serve` locally; Pages compresses on
+      # the fly, so shipping them would be ~9 MB of dead weight.
+      - name: Drop the pre-compressed copies
+        run: find web/data -name '*.json.gz' -delete
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+  deploy:
+    needs: build
+    # Pull requests get the build and the validators, but only main deploys.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

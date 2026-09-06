@@ -1,4 +1,4 @@
-.PHONY: all data refresh serve clean check gzip
+.PHONY: all data refresh serve clean check invariants gzip
 
 PY ?= python3
 PORT ?= 8000
@@ -23,6 +23,10 @@ serve:
 ## check: re-run the validators without re-downloading anything
 check:
 	$(PY) scripts/build_timeline.py
+
+## invariants: assert the headline figures the README quotes (run in CI too)
+invariants:
+	$(PY) scripts/check_invariants.py
 
 ## gzip: pre-compress the generated JSON so `make serve` can send it compressed
 gzip:

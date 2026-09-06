@@ -1,5 +1,9 @@
 # Visualising the Bible
 
+**[View it live →](https://pieteradejong.github.io/bible/)**
+
+[![Build and deploy](https://github.com/pieteradejong/bible/actions/workflows/pages.yml/badge.svg)](https://github.com/pieteradejong/bible/actions/workflows/pages.yml)
+
 Six visualisations of the Protestant canon — Old Testament and New — built from
 public-domain text and openly licensed scholarly data:
 
@@ -37,6 +41,11 @@ make check    # re-run the validators without downloading anything
 make gzip     # pre-compress the generated JSON; `make serve` sends it as gzip
 make clean    # remove generated files, keep the downloads
 ```
+
+`make invariants` asserts the headline figures this README quotes (66 books,
+1,189 chapters, 31,100 verses, 344,799 cross-references, 1,278 places, 133
+people in the genealogy). CI runs it after every build, so an upstream source
+that changes shape breaks the build rather than quietly shipping a thinner site.
 
 `make serve` is a small custom server rather than `python -m http.server` for
 exactly one reason: it sends the pre-compressed `.json.gz` when the browser
@@ -262,6 +271,19 @@ in the source are stripped.
 
 ---
 
+## How it is deployed
+
+`.github/workflows/pages.yml` runs on every push to `main`: it fetches the
+sources (cached weekly), runs the full build, checks the invariants, and
+publishes `web/` to GitHub Pages. Because `build_timeline.py` runs last and
+refuses to emit anything when a curated reference does not resolve, **a
+validation failure blocks the deploy** — the site can only go live from data
+that passed every check. Pull requests get the build and the checks but do not
+deploy.
+
+The pre-compressed `.json.gz` files are dropped from the Pages artifact; Pages
+compresses on the fly, so they only matter to `make serve` locally.
+
 ## Repository layout
 
 ```
@@ -320,6 +342,11 @@ in the source are stripped.
 - **The gazetteer is Protestant-canon only.** Deuterocanonical places, and places
   named only in 1 Maccabees (Modein, for instance), are absent unless added to
   `extra_places.json` by hand.
+- **The atlas uses OpenStreetMap's public tile servers.** Their [tile usage
+  policy](https://operations.osmfoundation.org/policies/tiles/) discourages
+  third-party apps at volume. At personal traffic this is unremarkable, but if
+  this ever drew real traffic the fix is a provider that permits it, or
+  self-hosted tiles.
 - **Verified headless, not by hand.** Every page was rendered in headless
   Chromium during development and checked for JS errors and expected output
   (257 timeline items, 1,278 atlas markers plus 73 route stops, 181,533 arcs,
