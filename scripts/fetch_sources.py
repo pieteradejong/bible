@@ -73,9 +73,28 @@ for _code in TRANSLATIONS:
     }
 
 
-def fetch(name, spec, force=False):
+def previous_urls():
+    """What each cached file was actually downloaded from, if we know."""
+    path = RAW / "MANIFEST.json"
+    if not path.exists():
+        return {}
+    try:
+        return {k: v.get("url") for k, v in json.loads(path.read_text()).items()}
+    except (json.JSONDecodeError, OSError, AttributeError):
+        return {}
+
+
+def fetch(name, spec, force=False, known=None):
     dest = RAW / name.rstrip("/")
-    if dest.exists() and not force and (not dest.is_dir() or any(dest.iterdir())):
+    # A cached file is only usable if it came from the URL we now want. Changing
+    # a source's URL has to re-download it, or a restored CI cache will quietly
+    # serve the old file in the old format -- which is exactly what happened
+    # when the KJV source moved.
+    stale = (known or {}).get(name) not in (None, spec["url"])
+    if stale and dest.exists():
+        print(f"  ~ {name} was fetched from a different URL; re-downloading")
+    if dest.exists() and not force and not stale and \
+            (not dest.is_dir() or any(dest.iterdir())):
         if dest.is_dir():
             print(f"  = {name} ({len(list(dest.iterdir()))} files, cached)")
             return dest
@@ -114,10 +133,11 @@ def fetch(name, spec, force=False):
 def main(argv):
     force = "--force" in argv
     RAW.mkdir(parents=True, exist_ok=True)
+    known = previous_urls()
     print("Fetching sources into data/raw/")
     for name, spec in SOURCES.items():
         try:
-            fetch(name, spec, force)
+            fetch(name, spec, force, known)
         except Exception as e:  # noqa: BLE001 - report and keep going
             print(f"    !! failed: {e}", file=sys.stderr)
             return 1

@@ -58,8 +58,10 @@ jobs:
         with:
           path: data/raw
           key: sources-${{ steps.week.outputs.key }}-${{ hashFiles('scripts/fetch_sources.py') }}
-          restore-keys: |
-            sources-${{ steps.week.outputs.key }}-
+          # No restore-keys on purpose: a partial-match restore would bring back
+          # files fetched from URLs this script no longer uses. fetch_sources.py
+          # re-downloads a file whose URL has changed, but not paying for a
+          # stale cache at all is better.
 
       - name: Fetch sources and build everything
         run: python scripts/build_all.py
