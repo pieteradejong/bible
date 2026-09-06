@@ -19,15 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-This license covers the code in this repository: scripts/, web/js/, web/css/
-and the HTML pages.
-
-The hand-authored data under data/curated/ is licensed CC-BY-4.0 instead; see
-LICENSE-DATA.
-
-Third-party data downloaded by scripts/fetch_sources.py is not covered by
-either license and is not redistributed in this repository. Each source keeps
-its own terms; see the "Data sources" section of README.md.

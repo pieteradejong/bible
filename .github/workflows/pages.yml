@@ -60,10 +60,11 @@ jobs:
       - name: Check the headline invariants
         run: python scripts/check_invariants.py
 
+      # Reads the repo's Pages config. It cannot create the Pages site itself:
+      # the default GITHUB_TOKEN gets "Resource not accessible by integration"
+      # for that, so Pages was enabled once out of band with
+      #   gh api -X POST repos/OWNER/REPO/pages -f build_type=workflow
       - uses: actions/configure-pages@v5
-        # Turns Pages on for the repo on the first run.
-        with:
-          enablement: true
 
       # The .json.gz files exist for `make serve` locally; Pages compresses on
       # the fly, so shipping them would be ~9 MB of dead weight.

@@ -370,8 +370,21 @@ compresses on the fly, so they only matter to `make serve` locally.
 
 ## Licensing
 
-- **Code** (`scripts/`, `web/js/`, `web/css/`, the HTML): MIT — see `LICENSE`.
-- **Curated data** (`data/curated/`): CC-BY-4.0 — see `LICENSE-DATA`. It is
-  editorial content, not code, and attribution is the point.
-- **Downloaded sources** keep their own licenses and are not redistributed here;
-  see *Data sources* above.
+This repository is split, because it holds two different kinds of thing:
+
+- **Code** — `scripts/`, `web/js/`, `web/css/`, the HTML, the Makefile and the
+  workflow: **MIT**, see `LICENSE`.
+- **Curated data** — everything under `data/curated/`: the canon table, eras,
+  events, people, journeys, genealogy and supplemental coordinates:
+  **CC-BY-4.0**, see `LICENSE-DATA`. It is editorial content rather than code,
+  and attribution is the point of it.
+- **Downloaded sources** — whatever `scripts/fetch_sources.py` pulls into
+  `data/raw/`: each keeps its own licence and none of it is redistributed here.
+  See *Data sources* above. In short: OpenBible.info's cross-references and
+  geocoding data are CC-BY-4.0 (their geometry incorporates OpenStreetMap under
+  ODbL-1.0), and the six translations are public domain.
+
+`LICENSE` deliberately contains the MIT text and nothing else, with no
+explanatory preamble — GitHub's licence detector gives up on a file that carries
+extra prose, and having the repo plainly labelled MIT is worth more than a note
+that only someone opening the file would read. This paragraph is that note.
