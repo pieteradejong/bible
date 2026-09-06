@@ -1,6 +1,7 @@
-// The 344,799 cross-references OpenBible's readers have voted on, drawn two ways:
+// The 344,798 cross-references OpenBible's readers have voted on, drawn two ways:
 // an arc diagram over all 1,189 chapters, and a 66x66 book matrix.
 import { load, shell, esc, books, verseText, readable, showTip, moveTip, hideTip } from "./common.js";
+import { alphaFor } from "./lib/layout.js";
 
 shell("Cross-references");
 
@@ -145,13 +146,6 @@ function edgeColor(e, alpha) {
     ? DIRS[dirOf(e[0], e[2])].c
     : DIVCOLORS[BOOKS[e[2]].division] ?? "#8d8378";
   return c + alpha;
-}
-
-// Every arc adds light, so the alpha that reads well for a thousand arcs is a
-// white-out at a hundred thousand. Scale it to the number actually drawn.
-function alphaFor(n) {
-  const a = Math.max(2, Math.min(56, Math.round(2400 / Math.sqrt(Math.max(n, 1)))));
-  return a.toString(16).padStart(2, "0");
 }
 
 function redraw() {

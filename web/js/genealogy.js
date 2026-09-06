@@ -3,6 +3,7 @@
 // parallel for twenty generations, touch again at Shealtiel and Zerubbabel,
 // and give Joseph two different fathers.
 import { load, shell, esc, books, verseText, readable, showTip, moveTip, hideTip } from "./common.js";
+import { generationDepths, barycentre } from "./lib/layout.js";
 
 shell("Genealogy");
 
@@ -65,17 +66,7 @@ for (const e of descent) {
   push(parents, e.c, e.p);
 }
 
-const depth = new Map();
-function computeDepth(id, seen = new Set()) {
-  if (depth.has(id)) return depth.get(id);
-  if (seen.has(id)) return 0;                 // defensive: no cycles expected
-  seen.add(id);
-  const ps = parents.get(id) ?? [];
-  const d = ps.length ? Math.max(...ps.map((p) => computeDepth(p, seen))) + 1 : 0;
-  depth.set(id, d);
-  return d;
-}
-for (const p of g.people) computeDepth(p.id);
+const depth = generationDepths(g.people.map((p) => p.id), (id) => parents.get(id));
 
 // A person who appears only as somebody's spouse has no descent depth of her
 // own; put her in the same generation as the person she married.
@@ -109,17 +100,17 @@ for (let sweep = 0; sweep < 6; sweep++) {
   }
 }
 function bary(id) {
-  const ps = (parents.get(id) ?? []).map((p) => pos.get(p)).filter((v) => v != null);
-  if (ps.length) return ps.reduce((a, b) => a + b, 0) / ps.length;
-  const mate = spouseOf.get(id);
+  const ps = (parents.get(id) ?? []).filter((p) => pos.has(p));
+  if (ps.length) return barycentre(ps, (p) => pos.get(p), 0);
   // Nudge a spouse just below the person married, rather than leaving her
   // wherever the initial order happened to put her.
+  const mate = spouseOf.get(id);
   if (mate && pos.has(mate)) return pos.get(mate) + 0.5;
   return pos.get(id) ?? 0;
 }
 function baryDown(id) {
-  const cs = (children.get(id) ?? []).map((c) => pos.get(c)).filter((v) => v != null);
-  return cs.length ? cs.reduce((a, b) => a + b, 0) / cs.length : pos.get(id) ?? 0;
+  return barycentre((children.get(id) ?? []).filter((c) => pos.has(c)),
+                    (c) => pos.get(c), pos.get(id) ?? 0);
 }
 
 const COL = 104, ROW = 30, PAD = 40;

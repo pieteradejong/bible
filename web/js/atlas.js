@@ -13,6 +13,24 @@ document.body.insertAdjacentHTML("beforeend", `
         <input type="search" id="q" placeholder="Capernaum, Nineveh, Tarshish...">
         <div id="results" style="margin-top:6px;font-size:12.5px"></div>
       </div>
+      <h2>Where nobody knows</h2>
+      <div class="checks">
+        <label title="Places whose extent scholarship cannot fix">
+          <input type="checkbox" id="uncertainty">
+          Draw uncertainty fields
+          <span class="count">${Object.keys(uncertainty).length}</span>
+        </label>
+      </div>
+      <p class="hint">For places like Assyria, Amalek and Bashan the gazetteer
+        ships nested confidence contours rather than a location. Drawn as a
+        graded field, darkest where scholarship agrees.</p>
+      <h2>Time</h2>
+      <div class="control">
+        <label><input type="checkbox" id="timeOn"> Filter by date</label>
+        <input type="range" id="time" min="${TIME_MIN}" max="${TIME_MAX}"
+               value="${TIME_MAX}" step="5" disabled>
+        <div class="hint" id="timeLabel">off &mdash; showing every place</div>
+      </div>
       <h2>Shapes</h2>
       <div class="checks" id="shapes"></div>
       <p class="hint">Drawn as areas and lines rather than points, simplified from
@@ -53,10 +71,20 @@ document.body.insertAdjacentHTML("beforeend", `
       <p class="note">Click a marker, or a stop on a route.</p></aside>
   </main>`);
 
-const [places, meta, journeys, verses, BOOKS, geometry] = await Promise.all([
-  load("places.json"), load("places_meta.json"), load("journeys.json"),
-  load("places_verses.json"), books(), load("geometry.json"),
-]);
+const [places, meta, journeys, verses, BOOKS, geometry, uncertainty, timeline] =
+  await Promise.all([
+    load("places.json"), load("places_meta.json"), load("journeys.json"),
+    load("places_verses.json"), books(), load("geometry.json"),
+    load("uncertainty.json"), load("timeline.json"),
+  ]);
+
+// Events that carry both a date and a resolved coordinate, for the time scrub.
+const DATED = timeline.events
+  .filter((e) => e.places?.length)
+  .map((e) => ({ ...e, end: e.end ?? e.start }))
+  .sort((a, b) => a.start - b.start);
+const TIME_MIN = Math.min(...DATED.map((e) => e.start));
+const TIME_MAX = Math.max(...DATED.map((e) => e.end));
 
 const CONF = {
   certain:  { c: "#5eb87a", label: "Certain",   hint: "No substantial doubt among the sources." },
@@ -70,6 +98,8 @@ const S = {
   conf: new Set(Object.keys(CONF)), scope: "all", book: "", type: "",
   min: 1, contested: false, journeys: new Set(journeys.map((j) => j.id)),
   shapes: new Set(["river", "body of water"]),
+  uncertainty: false,
+  timeAt: null,          // null = time filter off
 };
 
 // Shapes worth drawing as shapes. A settlement is a dot; Judea is not.
@@ -88,7 +118,9 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 14, className: "basemap",
 }).addTo(map);
 
-const shapeLayer = L.layerGroup().addTo(map);   // under everything
+const fieldLayer = L.layerGroup().addTo(map);   // uncertainty, furthest back
+const shapeLayer = L.layerGroup().addTo(map);
+const eventLayer = L.layerGroup().addTo(map);
 const placeLayer = L.layerGroup().addTo(map);
 const routeLayer = L.layerGroup().addTo(map);
 const byName = new Map(places.map((p) => [p.name, p]));
@@ -112,6 +144,22 @@ document.getElementById("type").innerHTML +=
 document.getElementById("book").innerHTML +=
   BOOKS.map((b) => `<option value="${b.i}">${esc(b.name)}</option>`).join("");
 document.getElementById("contestedN").textContent = meta.contested;
+
+document.getElementById("uncertainty").addEventListener("change", (e) => {
+  S.uncertainty = e.target.checked;
+  drawFields();
+});
+
+const timeSlider = document.getElementById("time");
+document.getElementById("timeOn").addEventListener("change", (e) => {
+  timeSlider.disabled = !e.target.checked;
+  S.timeAt = e.target.checked ? +timeSlider.value : null;
+  drawEvents();
+});
+timeSlider.addEventListener("input", (e) => {
+  S.timeAt = +e.target.value;
+  drawEvents();
+});
 
 document.getElementById("shapes").innerHTML = Object.entries(SHAPE_KINDS).map(([k, v]) => {
   const n = Object.values(geometry).filter((x) => x.type === k).length;
@@ -205,6 +253,60 @@ function drawShapes() {
     layer.addTo(shapeLayer);
   }
 }
+
+// Nested contours, broadest and faintest on the outside. The point is that the
+// eye should read "somewhere around here", not "at this pin".
+function drawFields() {
+  fieldLayer.clearLayers();
+  if (!S.uncertainty) return;
+  for (const [id, u] of Object.entries(uncertainty)) {
+    const span = Math.max(u.max - u.min, 1);
+    for (const band of u.bands) {
+      const t = (band.conf - u.min) / span;           // 0 outermost, 1 innermost
+      L.polygon(band.ring, {
+        stroke: false,
+        fillColor: "#e0a458",
+        fillOpacity: 0.045 + t * 0.10,
+        interactive: t > 0.85,                        // only the core takes clicks
+      }).bindTooltip(`<b>${esc(u.name)}</b><br>confidence ${band.conf} of ${u.max}`,
+                     { sticky: true })
+        .addTo(fieldLayer);
+    }
+  }
+}
+
+// Events dated at or before the slider position, so dragging it plays the
+// narrative forward across the map.
+function drawEvents() {
+  eventLayer.clearLayers();
+  const label = document.getElementById("timeLabel");
+  if (S.timeAt == null) {
+    label.textContent = "off — showing every place";
+    placeLayer.addTo(map);
+    return;
+  }
+  map.removeLayer(placeLayer);
+  const y = S.timeAt;
+  const shown = DATED.filter((e) => e.start <= y);
+  for (const e of shown) {
+    const age = Math.min((y - e.start) / 400, 1);      // fade with distance in time
+    for (const pl of e.places) {
+      L.circleMarker([pl.lat, pl.lon], {
+        radius: 5 - age * 2, color: "#e0a458", weight: 1.2,
+        fillColor: "#e0a458", fillOpacity: 0.55 - age * 0.4, opacity: 1 - age * 0.6,
+      }).bindTooltip(`<b>${esc(e.label)}</b><br>${yearLabel(e.start)}`,
+                     { direction: "top" })
+        .addTo(eventLayer);
+    }
+  }
+  const latest = shown.at(-1);
+  label.innerHTML = `<b>${yearLabel(y)}</b> &mdash; ${shown.length} of ${DATED.length}
+    dated events so far${latest ? `<br>latest: ${esc(latest.label)}` : ""}
+    <br><span style="color:var(--faint)">only curated events carry dates, so this
+    is sparser than the full atlas</span>`;
+}
+
+const yearLabel = (y) => (y < 0 ? `${-y} BCE` : `${y} CE`);
 
 function routeColor(j) {
   return { amber: "#e0a458", red: "#d9736a", slate: "#8d8378", violet: "#a98bd6",
@@ -313,3 +415,4 @@ if (hash && byName.has(hash)) select(byName.get(hash));
 
 refresh();
 drawRoutes();
+drawFields();

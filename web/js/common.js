@@ -1,4 +1,12 @@
-// Shared helpers: data loading, OSIS parsing, tooltips, nav.
+// Shared helpers: data loading, tooltips, nav shell.
+//
+// The pure reference/formatting helpers live in lib/osis.js so they can be unit
+// tested without a DOM; they are re-exported here so views keep one import.
+export { parseOsis, readable, year, span, esc } from "./lib/osis.js";
+// A re-export does not create a local binding, so anything used *inside* this
+// module has to be imported as well.
+import { parseOsis, esc } from "./lib/osis.js";
+
 export const DATA = "data";
 
 const cache = new Map();
@@ -25,11 +33,6 @@ export const LANES = {
   exile: "Exile", church: "Church", text: "Text and canon",
 };
 
-// --- references -------------------------------------------------------------
-export function parseOsis(ref) {
-  const m = /^(\w+)\.(\d+)\.(\d+)$/.exec(ref);
-  return m ? { book: m[1], chapter: +m[2], verse: +m[3] } : null;
-}
 
 let BOOKS = null;
 export async function books() {
@@ -41,12 +44,6 @@ export async function books() {
   return BOOKS;
 }
 
-export function readable(ref, bks) {
-  const p = parseOsis(ref);
-  if (!p) return ref;
-  const b = bks.byOsis ? bks.byOsis[p.book] : bks.find((x) => x.osis === p.book);
-  return `${b ? b.name : p.book} ${p.chapter}:${p.verse}`;
-}
 
 // Fetch a single verse's text, loading (and caching) that book's file.
 export async function verseText(ref) {
@@ -78,18 +75,7 @@ export function moveTip(evt) {
 }
 export function hideTip() { tip.classList.remove("on"); }
 
-// --- misc -------------------------------------------------------------------
-export function year(y) {
-  return y < 0 ? `${-y} BCE` : y === 0 ? "1 BCE/CE" : `${y} CE`;
-}
-export function span(a, b) {
-  if (b == null || b === a) return year(a);
-  return a < 0 && b < 0 ? `${-a}-${-b} BCE`
-       : a > 0 && b > 0 ? `${a}-${b} CE`
-       : `${year(a)} - ${year(b)}`;
-}
-export const esc = (s) =>
-  String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+// --- misc ---------------------------------------------------------------
 
 export function markNav() {
   const here = location.pathname.split("/").pop() || "index.html";
@@ -106,6 +92,7 @@ export function shell(title) {
       <nav class="views">
         <a href="timeline.html">Timeline</a>
         <a href="atlas.html">Atlas</a>
+        <a href="footprint.html">Footprint</a>
         <a href="network.html">Cross-references</a>
         <a href="quotations.html">Quotations</a>
         <a href="genealogy.html">Genealogy</a>

@@ -1,0 +1,11 @@
+{
+  "name": "bible-visualisations",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Declares ES modules and wires node --test. There are no dependencies and nothing to install; see README.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test \"tests/js/*.test.js\""
+  }
+}

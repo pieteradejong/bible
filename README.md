@@ -4,16 +4,17 @@
 
 [![Build and deploy](https://github.com/pieteradejong/bible/actions/workflows/pages.yml/badge.svg)](https://github.com/pieteradejong/bible/actions/workflows/pages.yml)
 
-Six visualisations of the Protestant canon — Old Testament and New — built from
+Seven visualisations of the Protestant canon — Old Testament and New — built from
 public-domain text and openly licensed scholarly data:
 
 | View | What it shows |
 |---|---|
 | **Timeline** (`timeline.html`) | Four thousand years on one zoomable axis: eras, kings, prophets, empires, the life of Jesus, the apostolic age, and when each of the 66 books was written — coloured by how firmly the date is actually known. |
 | **Atlas** (`atlas.html`) | Every biblical place that can be put on a map (1,278 of them), sized by how often it is named and coloured by how confident scholarship is about *where* it was, plus eight reconstructed routes. |
-| **Cross-references** (`network.html`) | The whole citation web: an arc diagram over all 1,189 chapters, and a 66×66 matrix of which book leans on which. 344,799 links. |
+| **Cross-references** (`network.html`) | The whole citation web: an arc diagram over all 1,189 chapters, and a 66×66 matrix of which book leans on which. 344,798 links. |
 | **Quotations** (`quotations.html`) | Direct quotation separated from loose allusion by measurement rather than assertion: the longest run of words each New Testament verse shares with the Old Testament verse it cites. 314 outright quotations, 4,854 scored pairs. |
 | **Genealogy** (`genealogy.html`) | Descent lines as a layered graph — Adam to Abraham, Perez to David, and Matthew's and Luke's irreconcilable genealogies of Jesus running in parallel and giving Joseph two different fathers. |
+| **Footprint** (`footprint.html`) | Where each book's world sits: every book placed at the mention-weighted centre of the places it names, connected in canonical order so the focus visibly travels — Mesopotamia, Canaan, Egypt, the Levant, the Mediterranean. Plus 66 thumbnails on one shared extent. |
 | **Reader** (`reader.html`) | The text itself with the links live — each verse carries its references in the margin, each place name opens on the map, six centuries of English rendering stack underneath, and a linked verse previews in a side panel without losing your place. |
 
 Everything is static: Python builds JSON, the browser draws it. No server, no
@@ -43,7 +44,7 @@ make clean    # remove generated files, keep the downloads
 ```
 
 `make invariants` asserts the headline figures this README quotes (66 books,
-1,189 chapters, 31,100 verses, 344,799 cross-references, 1,278 places, 133
+1,189 chapters, 31,102 verses, 344,798 cross-references, 1,278 places, 133
 people in the genealogy). CI runs it after every build, so an upstream source
 that changes shape breaks the build rather than quietly shipping a thinner site.
 
@@ -92,10 +93,10 @@ Every third-party file is downloaded by `scripts/fetch_sources.py` into
 
 | Source | File | Size | License | Used for |
 |---|---|---|---|---|
-| [OpenBible.info cross-references](https://www.openbible.info/labs/cross-references/) — [download](https://a.openbible.info/data/cross-references.zip) | `cross_references.txt` | 8.3 MB | CC-BY 4.0 | 344,799 verse-to-verse links with reader vote counts. The whole cross-reference view, and the margins in the reader. |
+| [OpenBible.info cross-references](https://www.openbible.info/labs/cross-references/) — [download](https://a.openbible.info/data/cross-references.zip) | `cross_references.txt` | 8.3 MB | CC-BY 4.0 | 344,799 verse-to-verse links with reader vote counts; 344,798 survive validation against the KJV's versification. The whole cross-reference view, and the margins in the reader. |
 | [openbibleinfo/Bible-Geocoding-Data](https://github.com/openbibleinfo/Bible-Geocoding-Data) — `data/ancient.jsonl` | `ancient.jsonl` | 11.6 MB | CC-BY 4.0 | Every place named in the Bible, each with its proposed modern sites, per-verse mentions, place type, and the confidence votes of 70+ reference works. |
 | same repo — `data/modern.jsonl` | `modern.jsonl` | 3.2 MB | CC-BY 4.0 | Modern location records the ancient places resolve to. Fetched for completeness; the atlas currently reads coordinates straight off the resolutions in `ancient.jsonl`. |
-| [thiagobodruk/bible](https://github.com/thiagobodruk/bible) — `json/en_kjv.json` | `en_kjv.json` | 4.6 MB | Public domain (KJV) | The full King James text, 31,100 verses. |
+| [scrollmapper/bible_databases](https://github.com/scrollmapper/bible_databases) — `formats/json/KJV.json` | `en_kjv.json` | 8.4 MB | Public domain (KJV) | The full King James text, 31,102 verses. |
 | same geocoding repo — `data/geometry.jsonl` | `geometry.jsonl` | 0.2 MB | CC-BY 4.0 | Metadata for the region and river shapes. |
 | same geocoding repo — repository tarball, `geometry/` only | `geometry/` | 33 MB archive → 3,683 files | CC-BY 4.0; geometry incorporates OpenStreetMap under ODbL 1.0 | The per-place GeoJSON the atlas draws regions and rivers from. Fetched as one tarball rather than 3,683 requests. |
 | [scrollmapper/bible_databases](https://github.com/scrollmapper/bible_databases) — `formats/json/{Wycliffe,Tyndale,Darby,YLT,ASV}.json` | `tr_*.json` | 40 MB total | Public domain | The five comparison translations in the reader. |
@@ -205,6 +206,53 @@ canon table.
 
 ---
 
+## Testing
+
+Seven layers, `unittest` and `node:test` — both built in. The repo still has no
+dependencies and nothing to install.
+
+```zsh
+make test       # units, properties, pipeline, JS. Offline, no build needed, ~5s
+make test-all   # adds contract tests over real output, invariants, page smoke
+make smoke      # render every page headless and assert it produced output
+```
+
+| Layer | What it covers |
+|---|---|
+| `tests/test_transforms.py` | The pure transforms: the KJV brace rule, book-name normalisation, OSIS parsing, confidence scoring, quotation classification, Douglas–Peucker |
+| `tests/test_properties.py` | Invariants over generated input with fixed seeds: simplification only ever *removes* points and always keeps endpoints; `clean()` never leaks markup; parsers never raise |
+| `tests/test_pipeline.py` | Each builder run as a subprocess over a generated corpus, including that the validation gate actually blocks bad curated data |
+| `tests/test_contracts.py` | Semantics of the real output — every one of the 344,798 cross-reference targets resolves, the genealogy is acyclic, no coordinate is nonsense |
+| `tests/js/*.test.js` | The extracted layout maths in `web/js/lib/` |
+| `tests/smoke.py` | Every page rendered headless, asserted to produce real output |
+| `scripts/check_invariants.py` | The headline figures this README quotes |
+
+**The tests are written against bugs that actually shipped.** Each of these was
+a real defect during development, and each is now pinned:
+
+- a brace rule that leaked 2,261 marginal notes into the verse text
+- a book-name alias that silently built 65 books instead of 66
+- a canvas alpha that saturated 190,000 arcs to solid white
+- row packing done in data units, so labels collided at every zoom but one
+
+Reintroduce any of them and the suite fails. That is the standard being aimed
+at: not coverage, but *would this have caught what we actually got wrong*.
+
+### What the tests found
+
+Two genuine data bugs, on the first run:
+
+1. **The KJV source was missing Matthew 2:16** — the slaughter of the innocents —
+   which shifted every later verse in that chapter, and split Revelation 12 into
+   18 verses. References into those chapters did not resolve. The base text was
+   moved from `thiagobodruk/bible` to `scrollmapper`, which has the correct
+   31,102 verses. The cost is the italic markup for translator-supplied words,
+   which the corrected source does not carry; correct text beat pretty text.
+2. **One cross-reference cited 3 John 1:15**, which the KJV does not have —
+   OpenBible follows a versification that splits verse 14. `build_crossrefs.py`
+   now validates every reference against the built text and drops the ones that
+   cannot resolve, reporting the count.
+
 ## The views in detail
 
 ### Timeline
@@ -224,12 +272,23 @@ and its places link straight through to the atlas.
 
 ### Atlas
 
-Leaflet, dark CARTO basemap. Marker area scales with mention count (Jerusalem is
+Leaflet, OpenStreetMap tiles darkened in CSS. Marker area scales with mention count (Jerusalem is
 named in 955 verses; most places appear once). Colour is confidence in the
 identification, derived from the confidence tags each scholarly source attached.
 
 Filters: testament, specific book, place type (settlement, region, mountain,
 wadi, gate, well, …), minimum mentions, and *only places with rival sites*.
+
+**Uncertainty fields.** For 54 places whose extent nobody can fix — Assyria,
+Amalek, Ammon, Aram, Bashan — the gazetteer ships nested confidence contours
+rather than a location, and the atlas draws them as a graded field: darkest
+where scholarship agrees, fading outward. This is the project's argument about
+certainty applied to space instead of time, and the data was sitting unused in
+the download all along.
+
+**Time scrub.** A year slider driving off the curated chronology: 81 dated
+events with resolved coordinates, 2348 BCE to 95 CE. Sparser than the full
+atlas, and the UI says so.
 
 Routes draw as numbered stops; a disputed route (the Exodus) draws dashed.
 Clicking a place lists every verse that names it, links each one into the
@@ -248,7 +307,7 @@ strip lights up one chapter's links — outgoing in warm white, incoming in blue
 **Book matrix**: 66×66, rows referring, columns referred to, log-scaled. The
 bottom-left quadrant — New Testament citing Old — is the striking one.
 
-Of the 344,799 links: 54.3% stay inside the Old Testament, 24.5% inside the New,
+Of the 344,798 links: 54.3% stay inside the Old Testament, 24.5% inside the New,
 12.5% run Old→New and 8.8% New→Old. The most-referenced books are Psalms
 (33,983 incoming), Isaiah (24,048), Jeremiah (17,397), Matthew (14,785) and Acts
 (13,761).
@@ -256,6 +315,33 @@ Of the 344,799 links: 54.3% stay inside the Old Testament, 24.5% inside the New,
 Both honour the direction filter (Old→Old, Old→New, New→Old, New→New) and a
 minimum-weight slider. Clicking a chapter lists its references verse by verse,
 ordered by how many readers voted for each link.
+
+### Footprint
+
+Two ways of asking where a book's world is, both on a plain equirectangular
+projection rather than a slippy map, because the point is comparison rather than
+navigation.
+
+**Drift** places each book at the mention-weighted centre of every place it
+names — weighted, because a book naming Jerusalem forty times and Tarshish once
+is centred on Jerusalem. Connected in canonical order, the focus travels:
+
+```
+Genesis     116 places   31.70, 35.48   Canaan          spread  289 km
+Exodus       31 places   30.10, 32.06   Sinai / Suez    spread  132 km
+Joshua      431 places   31.93, 35.25   Canaan          spread   75 km
+Matthew      38 places   32.08, 35.52   Galilee         spread  136 km
+Acts        107 places   35.09, 31.03   eastern Med.    spread  597 km
+Revelation   19 places   36.97, 28.14   Asia Minor      spread  631 km
+```
+
+Spread is the mention-weighted mean distance from a book's own centre. Joshua at
+75 km is a conquest of one region; Acts at 597 km is an empire.
+
+**Small multiples** draws 66 thumbnails on one shared extent, so they compare
+honestly. 61 of 66 books name at least one mappable place; 13 name fewer than
+three and 5 name none — those render as an explicit "no places named" tile
+rather than an empty box.
 
 ### Reader
 

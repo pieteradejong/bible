@@ -13,6 +13,7 @@ STEPS = [
     ("quotation analysis", "scripts/build_quotations.py"),
     ("genealogy", "scripts/gen_genealogy.py"),
     ("timeline", "scripts/build_timeline.py"),   # validates against text + places
+    ("per-book geography", "scripts/build_geostats.py"),  # needs places + timeline
 ]
 
 

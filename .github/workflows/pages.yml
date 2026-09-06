@@ -36,6 +36,17 @@ jobs:
         with:
           python-version: '3.12'
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # The fast suite needs no downloads and no build, so it runs first: a
+      # broken transform fails the job in seconds instead of after a 110 MB fetch.
+      - name: Fast tests (units, properties, pipeline, JS)
+        run: |
+          python -m unittest tests.test_transforms tests.test_properties tests.test_pipeline
+          node --test 'tests/js/*.test.js'
+
       # The sources are ~110 MB and change upstream only occasionally. Rotate
       # the cache weekly so a stale copy can never pin the data indefinitely.
       - name: Week stamp for the source cache
@@ -59,6 +70,12 @@ jobs:
       # silently ship a thinner site. These are the figures the README quotes.
       - name: Check the headline invariants
         run: python scripts/check_invariants.py
+
+      # Semantic checks over the real output: every one of the 344,798
+      # cross-reference targets must resolve, the genealogy must be acyclic,
+      # no coordinate may be nonsense.
+      - name: Contract tests
+        run: python -m unittest tests.test_contracts
 
       # Reads the repo's Pages config. It cannot create the Pages site itself:
       # the default GITHUB_TOKEN gets "Resource not accessible by integration"

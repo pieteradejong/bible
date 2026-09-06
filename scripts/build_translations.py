@@ -54,8 +54,8 @@ def main():
     for code, source, year, note in EDITIONS:
         if source is None:                      # the KJV is already built
             manifest.append({"code": code, "year": year, "note": note,
-                             "path": "text", "books": len(BOOKS), "verses": 31100})
-            print(f"  {code:9s} {year:10s} {len(BOOKS):2d} books,  31,100 verses")
+                             "path": "text", "books": len(BOOKS), "verses": 31102})
+            print(f"  {code:9s} {year:10s} {len(BOOKS):2d} books,  31,102 verses")
             continue
         src = RAW / f"tr_{source}.json"
         if not src.exists():

@@ -1,6 +1,7 @@
 // Zoomable chronology. Rows are packed greedily; colour encodes how firmly the
 // date is known, because that is the honest variable in a biblical timeline.
 import { load, shell, showTip, moveTip, hideTip, CERTAINTY, span, esc, readable, verseText } from "./common.js";
+import { packRows } from "./lib/layout.js";
 
 shell("Timeline");
 
@@ -155,35 +156,21 @@ function shownItems() {
 
 function pack() {
   const shown = shownItems();
-  // pixels per year at the current zoom, and the label cost in pixels
-  const ppy = x(1) - x(0);
-  const px2yr = (px) => (ppy > 0 ? px / ppy : px);
+  const ppy = x(1) - x(0);          // pixels per year at the current zoom
 
   layout = [];
   let y = M.top + 14;
   for (const g of GROUPS) {
     if (!S.groups.has(g.id)) continue;
-    const mine = shown.filter((i) => i.g === g.id)
-      .sort((a, b) => a.a - b.a || (a.b ?? a.a) - (b.b ?? b.a));
+    const mine = shown.filter((i) => i.g === g.id);
     if (!mine.length) continue;
-    const rowEnds = [];
-    const label = { label: g.label, y, rows: 0 };
-    for (const it of mine) {
-      const barEnd = Math.max(it.b ?? it.a, it.a);
-      // 5.7px per character at 10.5px, plus a gap, converted to years. A bar
-      // wide enough to hold its own label needs only the gap.
-      const labelPx = it.label.length * 5.7;
-      const barPx = Math.max((barEnd - it.a) * ppy, 3);
-      const need = px2yr(barPx > labelPx + 14 ? PAD_PX : labelPx + PAD_PX);
-      let r = rowEnds.findIndex((end) => it.a > end);
-      if (r < 0) { r = rowEnds.length; rowEnds.push(-Infinity); }
-      rowEnds[r] = barEnd + need;
-      it._y = y + r * ROW;
-      layout.push(it);
+    const { placed, rows } = packRows(mine, { pixelsPerUnit: ppy, gapPx: PAD_PX });
+    for (const { item, row } of placed) {
+      item._y = y + row * ROW;
+      layout.push(item);
     }
-    label.rows = rowEnds.length;
-    layout.push({ _group: label });
-    y += rowEnds.length * ROW + GAP;
+    layout.push({ _group: { label: g.label, y, rows } });
+    y += rows * ROW + GAP;
   }
   contentHeight = y + 20;
 }

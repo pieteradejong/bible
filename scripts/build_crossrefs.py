@@ -12,6 +12,12 @@ Outputs (web/data/):
 Votes are OpenBible's crowd score: higher means more users judged the link
 apt. Negative-vote links (1242 of them) are kept but flagged, since "people
 voted this down" is itself signal.
+
+References are checked against the built KJV text and dropped when they do not
+resolve. Versification differs between traditions -- OpenBible follows one that
+splits 3 John 14 into two verses, so it cites 3John.1.15, which the KJV does not
+have. Emitting a link the reader cannot follow is worse than dropping it, so
+these are dropped and counted.
 """
 import collections, json, pathlib, re, sys
 
@@ -20,6 +26,7 @@ IDX = {b["osis"]: b["i"] for b in BOOKS}
 N = len(BOOKS)
 SRC = pathlib.Path("data/raw/cross_references.txt")
 OUT = pathlib.Path("web/data")
+TEXT = OUT / "text"
 
 REF = re.compile(r"^([\w]+)\.(\d+)\.(\d+)$")
 
@@ -33,15 +40,33 @@ def parse(ref):
     return None if b is None else (b, int(m.group(2)), int(m.group(3)))
 
 
+def verse_index():
+    """{book index: [verses per chapter]} from the built text, for validation."""
+    idx = {}
+    for b in BOOKS:
+        path = TEXT / f"{b['osis']}.json"
+        if not path.exists():
+            print(f"!! {path} missing; run build_text.py first", file=sys.stderr)
+            sys.exit(1)
+        idx[b["i"]] = [len(c) for c in json.loads(path.read_text())["chapters"]]
+    return idx
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "xref").mkdir(exist_ok=True)
+    verses = verse_index()
+
+    def exists(ref):
+        b, ch, vs = ref
+        lens = verses[b]
+        return 1 <= ch <= len(lens) and 1 <= vs <= lens[ch - 1]
 
     book_mat = [[0] * N for _ in range(N)]     # link counts
     book_wt = [[0] * N for _ in range(N)]      # vote-weighted
     chap = collections.Counter()               # (fb, fc, tb, tc) -> count
     per_book = collections.defaultdict(lambda: collections.defaultdict(list))
-    rows = skipped = 0
+    rows = skipped = unresolved = 0
 
     with SRC.open() as fh:
         next(fh)  # header
@@ -55,6 +80,9 @@ def main():
             t = parse(start)
             if not f or not t:
                 skipped += 1
+                continue
+            if not exists(f) or not exists(t):
+                unresolved += 1          # a versification this text does not share
                 continue
             te = parse(end) if end else None
             try:
@@ -90,7 +118,8 @@ def main():
         (OUT / "xref" / f"{osis}.json").write_text(
             json.dumps({"osis": osis, "refs": refs}, separators=(",", ":")) + "\n")
 
-    print(f"xrefs: {rows} parsed, {skipped} skipped, "
+    print(f"xrefs: {rows} parsed, {skipped} unparseable, "
+          f"{unresolved} outside this versification, "
           f"{len(edges)} chapter edges, {len(per_book)} per-book files")
 
 

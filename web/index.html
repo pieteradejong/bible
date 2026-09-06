@@ -44,9 +44,10 @@
 </head>
 <body>
 <main><div class="wrap">
-  <p class="lede">Six ways into the same text: when things happened, where they
+  <p class="lede">Seven ways into the same text: when things happened, where they
   happened, who descended from whom, how the parts quote and echo one another,
-  and the words themselves with every reference made walkable.</p>
+  where each book's world sits, and the words themselves with every reference
+  made walkable.</p>
   <p>Old Testament and New, 66 books, built from public-domain text and openly
   licensed scholarly data. Nothing here smooths over disagreement — where a date
   or a location is contested, the view says so.</p>
@@ -75,7 +76,7 @@
   <table class="key">
     <tr><td>Text</td><td>King James Version, public domain.</td></tr>
     <tr><td>Cross-references</td><td><a href="https://www.openbible.info/labs/cross-references/">OpenBible.info</a>,
-        CC-BY — 344,799 links, each carrying the votes readers gave it.</td></tr>
+        CC-BY — 344,798 usable links, each carrying the votes readers gave it.</td></tr>
     <tr><td>Geography</td><td><a href="https://github.com/openbibleinfo/Bible-Geocoding-Data">Bible Geocoding Data</a>,
         CC-BY — every identifiable place, with the scholarly confidence in each siting.</td></tr>
     <tr><td>Chronology</td><td>Hand-authored for this project from standard reference
@@ -109,6 +110,9 @@ const cards = [
   { href: "network.html", h: "Cross-references",
     p: "The whole citation web at once — an arc for each of the chapter pairs readers have linked, and a 66×66 matrix of which book leans on which.",
     n: (d) => `${d.xb.total.toLocaleString()} links · ${d.xc.edges.length.toLocaleString()} chapter pairs` },
+  { href: "footprint.html", h: "Footprint",
+    p: "Where each book's world actually sits \u2014 every book placed at the centre of the places it names, and 66 thumbnails on one shared extent so they compare honestly.",
+    n: (d) => `${d.gs.books.filter((b) => b.places).length} books located \u00b7 ${Math.round(Math.max(...d.gs.books.map((b) => b.spread || 0)))} km widest spread` },
   { href: "quotations.html", h: "Quotations",
     p: "Direct quotation separated from loose allusion by measurement, not assertion \u2014 the longest run of words each New Testament verse shares with the Old Testament verse it references.",
     n: (d) => `${d.qt.pairs.length.toLocaleString()} scored pairs \u00b7 ${(d.qt.classes.find(([k]) => k === "quotation")?.[1] ?? 0)} outright quotations` },
@@ -117,16 +121,16 @@ const cards = [
     n: (d) => `${d.gn.people.length} people \u00b7 ${d.gn.edges.length} links` },
   { href: "reader.html", h: "Reader",
     p: "The text with its links live: references in the margin, place names that open on the map, and six centuries of English rendering stacked under each verse.",
-    n: (d) => `31,100 verses \u00b7 ${d.tr.length} translations` },
+    n: (d) => `31,102 verses \u00b7 ${d.tr.length} translations` },
 ];
 
-const [tl, pm, jr, xb, xc, qt, gn, tr, gm] = await Promise.all([
+const [tl, pm, jr, xb, xc, qt, gn, tr, gm, gs, un] = await Promise.all([
   load("timeline.json"), load("places_meta.json"), load("journeys.json"),
   load("xref_books.json"), load("xref_chapters.json"),
   load("quotations.json"), load("genealogy.json"), load("translations.json"),
-  load("geometry.json"),
+  load("geometry.json"), load("geostats.json"), load("uncertainty.json"),
 ]);
-const d = { tl, pm, jr, xb, xc, qt, gn, tr, gm };
+const d = { tl, pm, jr, xb, xc, qt, gn, tr, gm, gs, un };
 
 document.getElementById("cards").innerHTML = cards.map((c) => `
   <a class="card" href="${c.href}"><h3>${c.h}</h3><p>${c.p}</p>
@@ -134,13 +138,15 @@ document.getElementById("cards").innerHTML = cards.map((c) => `
 
 const stats = [
   [tl.books.length, "books"],
-  ["31,100", "verses"],
+  ["31,102", "verses"],
   [xb.total.toLocaleString(), "cross-references"],
   [pm.count.toLocaleString(), "mapped places"],
   [pm.mentions.toLocaleString(), "place mentions"],
   [tl.events.length + tl.people.length, "dated entries"],
   [Object.keys(gm).length, "drawn regions & rivers"],
   [tr.length, "translations"],
+  [Object.keys(un).length, "uncertainty fields"],
+  [gs.books.filter((b) => b.places).length, "books mapped"],
 ];
 document.getElementById("stats").innerHTML = stats.map(([n, l]) =>
   `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");

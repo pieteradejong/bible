@@ -3,6 +3,7 @@
 // it references. See scripts/build_quotations.py for what this does and does
 // not mean.
 import { load, shell, esc, books, verseText, readable } from "./common.js";
+import { reEscape } from "./lib/osis.js";
 
 shell("Quotations");
 
@@ -110,8 +111,7 @@ function highlight(text, shared) {
   const words = shared.split(" ");
   // Rebuild the run as a loose regex so punctuation between words does not
   // break the match.
-  const re = new RegExp(words.map((w) =>
-    w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("[^a-zA-Z]+"), "i");
+  const re = new RegExp(words.map(reEscape).join("[^a-zA-Z]+"), "i");
   const m = re.exec(plain);
   if (!m) return text;
   return esc(plain.slice(0, m.index)) +

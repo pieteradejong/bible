@@ -28,9 +28,14 @@ SOURCES = {
                "Bible-Geocoding-Data/main/data/modern.jsonl",
         "license": "CC-BY-4.0 (OpenBible.info)",
     },
+    # Was thiagobodruk/bible, which carries the KJV's italic markup but is
+    # missing Matthew 2:16 and splits Revelation 12 into 18 verses -- so every
+    # later verse in those chapters is misnumbered and references into them do
+    # not resolve. Caught by tests/test_contracts.py. scrollmapper's KJV has the
+    # full 31,102 verses and correct chapter counts, at the cost of the italics.
     "en_kjv.json": {
-        "url": "https://raw.githubusercontent.com/thiagobodruk/bible/"
-               "master/json/en_kjv.json",
+        "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/"
+               "master/formats/json/KJV.json",
         "license": "Public domain (KJV text)",
     },
     "geometry.jsonl": {

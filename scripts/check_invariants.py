@@ -13,8 +13,8 @@ DATA = pathlib.Path("web/data")
 EXPECTED = {
     "books": 66,
     "chapters": 1189,
-    "verses": 31100,
-    "cross-references": 344799,
+    "verses": 31102,
+    "cross-references": 344798,
     "mapped places": 1278,
     "genealogy people": 133,
 }
